@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <odoo>
+        <data>
+            <record id="document_view_form_inherit" model="ir.ui.view">
+                <field name="name">document.view.form.inherit</field>
+                <field name="model">documents.document</field>
+                <field name="inherit_id" ref="s_document.view_sdocument_document_view_new_form"/>
+                <field name="arch" type="xml">
+                    <xpath expr="//sheet/group/group/field[@name='is_emergency']" position="after">
+                        <field name="is_user_download" invisible="1"/>
+                        <field name="is_downloadable" invisible="1"/>
+                    </xpath>
+                </field>
+            </record>
+        </data>
+    </odoo>
+</odoo>

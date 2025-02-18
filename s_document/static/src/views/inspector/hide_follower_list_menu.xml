@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="documents_AttachmentViewer_inherit_mail_chatter" owl="1" t-inherit="mail.Chatter"
+           t-inherit-mode="extension">
+        <xpath expr="//div[@class='flex-grow-1 d-flex']" position="attributes">
+            <attribute name="class" separator=" " add="d-none"/>
+        </xpath>
+
+        <xpath expr="//button[@class='o-mail-Chatter-logNote btn text-nowrap me-1']" position="after">
+                <div class="flex-grow-1 d-flex" t-if="this.props.threadModel === 'documents.document'">
+                    <t t-if="this.props.webRecord === undefined">
+                        <button t-if="props.hasActivities" class="o-mail-Chatter-activity btn btn-secondary text-nowrap" t-att-class="{ 'my-2': !props.compactHeight }" data-hotkey="shift+a" t-on-click="scheduleActivity">
+                        <span>Activities</span>
+                    </button>
+                    </t>
+                    <t t-elif="this.props.webRecord._config.context.uid === this.props.webRecord.data.create_uid[0]
+                    or this.props.webRecord._config.context.uid === this.props.webRecord.data.owner_id[0]
+                    or this.env.services.user.isAdmin">
+                    <button t-if="props.hasActivities" class="o-mail-Chatter-activity btn btn-secondary text-nowrap" t-att-class="{ 'my-2': !props.compactHeight }" data-hotkey="shift+a" t-on-click="scheduleActivity">
+                        <span>Activities</span>
+                    </button>
+                    <span class="o-mail-Chatter-topbarGrow flex-grow-1 pe-2"/>
+                    <button class="btn btn-link text-action" t-att-class="{ 'o-active': state.isSearchOpen }" aria-label="Search Messages" title="Search Messages" t-on-click="onClickSearch">
+                        <i class="oi oi-search" role="img"/>
+                    </button>
+                    <FileUploader t-if="attachments.length === 0" fileUploadClass="'o-mail-Chatter-fileUploader'" multiUpload="true" onUploaded.bind="onUploaded" onClick="(ev) => this.onClickAttachFile(ev)">
+                        <t t-set-slot="toggler">
+                            <t t-call="mail.Chatter.attachFiles"/>
+                        </t>
+                    </FileUploader>
+                    <t t-else="" t-call="mail.Chatter.attachFiles"/>
+                        <Dropdown t-if="props.hasFollowers" position="'bottom-end'" disabled="isDisabled" class="'o-mail-Followers d-flex me-1'" menuClass="'o-mail-Followers-dropdown flex-column'" menuDisplay="'d-flex'" title="followerButtonLabel" togglerClass="'o-mail-Followers-button btn btn-link d-flex align-items-center text-action px-1 ' + (props.compactHeight ? '' : 'my-2')">
+                            <t t-set-slot="toggler">
+                            <i class="fa fa-user-o me-1" role="img"/>
+                            <i t-if="state.thread.id and state.thread.followersCount === undefined" class="fa fa-circle-o-notch fa-spin"/>
+                            <sup t-else="" class="o-mail-Followers-counter" t-esc="state.thread.followersCount ?? 0"/>
+                        </t>
+                        <t t-set-slot="default">
+                            <FollowerList onAddFollowers.bind="onAddFollowers" onFollowerChanged.bind="onFollowerChanged" thread="state.thread"/>
+                        </t>
+                    </Dropdown>
+                    <button t-if="props.hasFollowers and state.thread.selfFollower" class="btn px-0" t-att-class="{ 'text-success': !unfollowdocument.isHover, 'text-warning': unfollowdocument.isHover, 'my-2': !props.compactHeight }" t-att-disabled="!props.threadId" t-on-click="onClickUnfollow" t-ref="unfollow_document">
+                        <div class="position-relative">
+                            <!-- Hidden element used to set the button maximum size -->
+                            <span class="d-flex invisible text-nowrap">
+                                <i class="me-1 fa fa-fw fa-eye-slash"/><t t-out="followingText.length > unfollowText.length ? followingText : unfollowText"/>
+                            </span>
+                            <span class="o-mail-Chatter-follow position-absolute end-0 top-0" t-out="unfollowdocument.isHover ? unfollowText : followingText"/>
+                        </div>
+                    </button>
+                    <button t-if="!state.thread.selfFollower" class="o-mail-Chatter-follow btn btn-link  px-0 text-600" t-on-click="onClickFollow">
+                        <div class="position-relative">
+                            <span class="d-flex invisible text-nowrap">
+                                <i class="me-1 fa fa-fw fa-eye-slash"/><t t-out="followingText.length > unfollowText.length ? followingText : unfollowText"/>
+                            </span>
+                            <span class="position-absolute end-0 top-0">
+                                Follow
+                            </span>
+                        </div>
+                    </button>
+                </t>
+            </div>
+
+            <div class="flex-grow-1 d-flex" t-if="this.props.threadModel !== 'documents.document'">
+                    <button t-if="props.hasActivities" class="o-mail-Chatter-activity btn btn-secondary text-nowrap" t-att-class="{ 'my-2': !props.compactHeight }" data-hotkey="shift+a" t-on-click="scheduleActivity">
+                        <span>Activities</span>
+                    </button>
+                    <span class="o-mail-Chatter-topbarGrow flex-grow-1 pe-2"/>
+                    <button class="btn btn-link text-action" t-att-class="{ 'o-active': state.isSearchOpen }" aria-label="Search Messages" title="Search Messages" t-on-click="onClickSearch">
+                        <i class="oi oi-search" role="img"/>
+                    </button>
+                    <FileUploader t-if="attachments.length === 0" fileUploadClass="'o-mail-Chatter-fileUploader'" multiUpload="true" onUploaded.bind="onUploaded" onClick="(ev) => this.onClickAttachFile(ev)">
+                        <t t-set-slot="toggler">
+                            <t t-call="mail.Chatter.attachFiles"/>
+                        </t>
+                    </FileUploader>
+                    <t t-else="" t-call="mail.Chatter.attachFiles"/>
+                        <Dropdown t-if="props.hasFollowers" position="'bottom-end'" disabled="isDisabled" class="'o-mail-Followers d-flex me-1'" menuClass="'o-mail-Followers-dropdown flex-column'" menuDisplay="'d-flex'" title="followerButtonLabel" togglerClass="'o-mail-Followers-button btn btn-link d-flex align-items-center text-action px-1 ' + (props.compactHeight ? '' : 'my-2')">
+                            <t t-set-slot="toggler">
+                            <i class="fa fa-user-o me-1" role="img"/>
+                            <i t-if="state.thread.id and state.thread.followersCount === undefined" class="fa fa-circle-o-notch fa-spin"/>
+                            <sup t-else="" class="o-mail-Followers-counter" t-esc="state.thread.followersCount ?? 0"/>
+                        </t>
+                        <t t-set-slot="default">
+                            <FollowerList onAddFollowers.bind="onAddFollowers" onFollowerChanged.bind="onFollowerChanged" thread="state.thread"/>
+                        </t>
+                    </Dropdown>
+                    <button t-if="props.hasFollowers and state.thread.selfFollower" class="btn px-0" t-att-class="{ 'text-success': !unfollowHover_orther_module.isHover, 'text-warning': unfollowHover_orther_module.isHover, 'my-2': !props.compactHeight }" t-att-disabled="!props.threadId" t-on-click="onClickUnfollow" t-ref="unfollow_other">
+                        <div class="position-relative">
+                            <!-- Hidden element used to set the button maximum size -->
+                            <span class="d-flex invisible text-nowrap">
+                                <i class="me-1 fa fa-fw fa-eye-slash"/><t t-out="followingText.length > unfollowText.length ? followingText : unfollowText"/>
+                            </span>
+                            <span class="o-mail-Chatter-follow position-absolute end-0 top-0" t-out="unfollowHover_orther_module.isHover ? unfollowText : followingText"/>
+                        </div>
+                    </button>
+                    <button t-if="!state.thread.selfFollower" class="o-mail-Chatter-follow btn btn-link  px-0 text-600" t-on-click="onClickFollow">
+                        <div class="position-relative">
+                            <span class="d-flex invisible text-nowrap">
+                                <i class="me-1 fa fa-fw fa-eye-slash"/><t t-out="followingText.length > unfollowText.length ? followingText : unfollowText"/>
+                            </span>
+                            <span class="position-absolute end-0 top-0">
+                                Follow
+                            </span>
+                        </div>
+                    </button>
+                </div>
+        </xpath>
+    </t>
+</templates>

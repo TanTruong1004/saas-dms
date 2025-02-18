@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+        <record id="documents_document_inherit_rule_read_only_custom" model="ir.rule">
+            <field name="name">Documents: readonly rule custom</field>
+            <field name="model_id" ref="model_documents_document"/>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+            <field name="domain_force">
+                [
+                    '|',
+                        ('global_permission', '=', True),
+                    '&amp;',
+                        ('global_permission', '=', False),
+                        '|',
+                            ('document_share_access_ids.user_id', '=', user.id),
+                            '&amp;',
+                                ('folder_id.read_group_ids', 'in', [g.id for g in user.groups_id]),
+                                '|',
+                                    '&amp;',
+                                        ('folder_id.user_specific', '=', False),
+                                        '|',
+                                            ('owner_id', '!=', user.id),
+                                            '|',
+                                                ('state', '=', 'done'),
+                                                ('create_uid', '=', user.id),
+                                    '&amp;',
+                                        ('folder_id.user_specific', '=', True),
+                                        '|',
+                                            '|',
+                                                ('create_uid', '=', user.id),
+                                                ('review_ids.reviewer_ids', 'in', user.id),
+                                            '|',
+                                                ('owner_id', '=', user.id),
+                                                '&amp;',
+                                                    ('message_is_follower', '=', True),
+                                                    ('state', '!=', 'draft'),
+                ]
+            </field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

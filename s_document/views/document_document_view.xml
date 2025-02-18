@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_sdocument_document_view_new_form" model="ir.ui.view">
+        <field name="name">sdocument_document_view_new_form</field>
+        <field name="model">documents.document</field>
+        <field name="arch" type="xml">
+            <form create="true" class="custom_font_size">
+                <header>
+                    <button type="object" name="access_content" string="Access" class="oe_highlight"
+                            invisible="not url"/>
+                    <button type="object" name="access_content" string="Download" class="oe_highlight"
+                            invisible="type in ('url', 'binary', 'empty')"/>
+                    <button type="object" name="create_share" string="Share" invisible="1"/>
+                    <button type="object" name="toggle_lock" string="Lock"
+                            invisible="1"/>
+                    <button type="object" name="toggle_lock" string="Unlock"
+                            invisible="1"/>
+                    <button type="object" name="toggle_active" string="Archive"
+                            invisible="1"/>
+                    <button type="object" name="toggle_active" string="Restore"
+                            invisible="active"/>
+                    <button type="object" name="action_open_release_wizard" string="Release"
+                            invisible="state != 'confirmed' or (create_uid != uid and owner_id != uid)"/>
+                    <button name="action_request_download" string="Request Download" type="object"
+                            class="oe_highlight make_color"
+                            invisible="is_download or type != 'binary' or state != 'done'"/>
+                    <button type="object" name="action_open_commit_wizard" string="Commit"
+                            invisible="not commitment_required or state != 'done' or is_commited"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,in_progress,confirmed,done,rejected"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="open_resource" type="object" class="oe_stat_button" icon="fa-external-link"
+                                invisible="not res_id or res_model in (False, 'documents.document')">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">Related
+                                    <br/>
+                                    Record
+                                </span>
+                            </div>
+                        </button>
+                        <button name="action_list_download" type="object" class="oe_stat_button" icon="fa-list"
+                                invisible="state != 'done'">
+                            <field name="download_count" widget="statinfo" string="List Download"/>
+                        </button>
+                        <button name="get_commitment_list" type="object" class="oe_stat_button" icon="fa-list"
+                                invisible="state != 'done'">
+                            <field name="commitment_count" widget="statinfo" string="List Commitment"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                            invisible="active"/>
+                    <field name="thumbnail" nolabel="1" widget="image" class="oe_avatar"
+                           options="{&quot;preview_image&quot;:&quot;thumbnail&quot;}"
+                           invisible="not thumbnail"/>
+                    <div class="oe_title" aria-label="Name">
+                        <h1>
+                            <field name="completed_name" placeholder="Document Name"
+                                   readonly="True" required="True"/>
+                            <i class="fa fa-lock oe_inline" title="Locked"
+                               invisible="not lock_uid"/>
+                        </h1>
+                    </div>
+                    <field name="is_locked" invisible="1"/>
+                    <field name="active" invisible="1"/>
+                    <field name="res_id" invisible="1"/>
+                    <field name="res_model" invisible="1"/>
+                    <group>
+                        <group>
+                            <field name="code_system" invisible="1"/>
+                            <field name="issuing_authority" required="1"
+                                   readonly="state != 'draft'"
+                                   options="{'no_edit': True, 'no_create': True, 'no_open': True}"
+                            />
+                            <field name="document_type"
+                                   readonly="state != 'draft'"
+                                   options="{'no_edit': True, 'no_create': True, 'no_open': True}"
+                            />
+                            <field name="document_code" readonly="state != 'draft'"/>
+                            <field name="name" required="1" readonly="state != 'draft'"/>
+                            <field name="custom_update_date" readonly="state != 'draft'" required="1"/>
+                            <field name="version" readonly="state != 'draft'"/>
+                            <field name="release_date" readonly="state != 'draft'"/>
+                            <field name="expiration_date" readonly="state != 'draft'" required="1"/>
+                            <field name="document_description" readonly="state != 'draft'" required="1"/>
+                            <field name="request_reason" readonly="state != 'draft'" required="1"/>
+                            <field name="custome_name_file" invisible="1"/>
+                            <field name="datas" string="File" filename="custome_name_file"
+                                   invisible="type == 'url'"
+                                   readonly="is_locked or state != 'draft'"
+                                   required="1"
+                            />
+                        </group>
+                        <group>
+                            <field name="url"
+                                   invisible="type != 'url'"
+                                   readonly="is_locked"/>
+                            <field name="owner_id"
+                                   readonly="is_locked or state != 'draft'"
+                                   options="{'no_edit': True, 'no_create': True, 'no_open': True}"/>
+                            <field name="folder_id"
+                                   readonly="is_locked or state != 'draft'"
+                                   options="{'no_edit': True, 'no_create': True, 'no_open': True}"
+                                   domain="['|', ('company_id', '=', False), ('company_id', '=', issuing_authority)]"/>
+                            <field name="partner_id" invisible="1" required="1"/>
+                            <field name="tag_ids" widget="many2many_tags"
+                                   domain="[('folder_id', '=', folder_id)]"
+                                   options="{'no_edit': True, 'no_create': True, 'no_open': True}"
+                                   readonly="state != 'draft'"/>
+                            <field name="type"/>
+                            <field name="lock_uid" readonly="1" invisible="not lock_uid"/>
+                            <field name="is_commited" invisible="not is_commited"/>
+                            <field name="is_download" invisible="not is_download"/>
+                            <field name="commitment_required" readonly="state != 'draft'" invisible="is_commited"/>
+                            <field name="request_approve" readonly="state != 'draft'" invisible="is_download"/>
+                            <field name="is_emergency" readonly="state != 'draft'"/>
+                            <field name="create_date" widget="datetime" options="{'show_time': false}"/>
+                            <field name="create_uid" options="{'no_edit': True, 'no_create': True, 'no_open': True}"/>
+                            <field name="write_date" widget="datetime" options="{'show_time': false}"/>
+                        </group>
+                    </group>
+                    <group groups="base.group_no_one">
+                        <field name="group_ids" widget="many2many_tags"/>
+                        <field name="company_id" groups="base.group_multi_company"
+                               readonly="state != 'draft'"
+                               options="{'no_edit': True, 'no_create': True, 'no_open': True}"/>
+                        <field name="file_size" invisible="type != 'binary'"/>
+                        <field name="mimetype"/>
+                    </group>
+                    <notebook>
+                        <page string="Tier Definition">
+                            <field name="tier_definition_ids" readonly="state != 'draft'">
+                                <tree string="tier_definition_ids" editable="bottom" class="custome_size_tier_defi_form">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name" force_save="1" class="custome_size_tier_review"/>
+                                    <field name="model_id" force_save="1" column_invisible="1"/>
+                                    <field name="company_id" force_save="1" column_invisible="1"/>
+                                    <field name="review_type" force_save="1" column_invisible="1"/>
+                                    <field name="reviewer_id" required="1" class="custome_size_tier_review"/>
+                                    <field name="definition_type" force_save="1" column_invisible="1"/>
+                                    <field name="definition_domain" force_save="1" column_invisible="1"/>
+                                    <field name="notify_on_accepted" column_invisible="1"/>
+                                    <field name="notify_on_create" column_invisible="1"/>
+                                    <field name="notify_on_rejected" column_invisible="1"/>
+                                    <field name="notify_on_restarted" column_invisible="1"/>
+                                    <field name="notify_status_on_action" column_invisible="1"/>
+                                    <field name="has_comment" column_invisible="1"/>
+                                    <field name="approve_sequence" column_invisible="1"/>
+                                    <field name="notify_reminder_delay" class="custome_size_tier_review"/>
+                                    <field name="has_forward" class="custome_size_tier_review"/>
+                                    <field name="approve_request" class="custome_size_tier_review"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="document_view_kanban_inherit_custom" model="ir.ui.view">
+        <field name="name">documents.document.kanban.inherit.custom</field>
+        <field name="model">documents.document</field>
+        <field name="inherit_id" ref="documents.document_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="class">custom_view_kanban</attribute>
+            </xpath>
+
+            <xpath expr="//div[hasclass('o_kanban_record_title')]" position="attributes">
+                <attribute name="class" separator=" " add="d-none"/>
+            </xpath>
+            <xpath expr="//div[hasclass('o_kanban_record_body')]" position="before">
+                <div t-att-title="record.completed_name.raw_value" class="o_kanban_record_title o_kanban_name">
+                    <t t-if="record.lock_uid.raw_value">
+                        <i class="o_documents_lock fa fa-lock" t-att-title="record.lock_uid.value"/>
+                    </t>
+                    <field name="completed_name" required="True" class="o_text_overflow" style="white-space: normal;"/>
+                </div>
+            </xpath>
+            <xpath expr="//div[@class='o_kanban_record_body']//field[@name='tag_ids']" position="before">
+                <t t-if="record.res_model_name.raw_value &amp;&amp; record.res_model.raw_value !== 'documents.document'">
+                    <strong>
+                        <field name="res_model_name"/>
+                    </strong>
+                    <t t-if="record.res_name.raw_value">
+                        <span t-att-title="record.res_name.raw_value">:
+                            <field name="res_name"/>
+                        </span>
+                    </t>
+                    <t t-elif="fileRequest">
+                        <span>
+                            <b>Request</b>
+                        </span>
+                    </t>
+                </t>
+                <t t-elif="record.document_code.raw_value">
+                    <span>
+                        <field name="code_system"/>
+                    </span>
+                </t>
+                <t t-elif="record.type.raw_value == 'url'">
+                    <span class="o_document_url">
+                        <i class="fa fa-globe" title="Document url"/>
+                        <field name="url" widget="url"/>
+                    </span>
+                </t>
+                <samp t-else="" class="text-muted"></samp>
+                <br/>
+                <div t-if="record.state.raw_value" name="release_date">
+                        Status: <field name="state"/>
+                    <br/>
+                </div><div t-if="record.release_date.raw_value" name="release_date">
+                    Release Date:
+                    <field name="release_date" widget="date"/>
+                    <br/>
+                </div>
+                <div t-if="record.expiration_date.raw_value" name="release_date">
+                    Expiration date:
+                    <field name="expiration_date" widget="date"/>
+                    <br/>
+                </div>
+                <div t-if="record.expiration_date.raw_value" name="expiration_date">
+                    <strong>
+                        Expired: <field name="expiration_date" widget="remaining_days"/>
+                    </strong>
+                </div>
+                <field name="custom_update_date" invisible="1"/>
+            </xpath>
+            <xpath expr="//div[@class='o_kanban_record_body']//field[@name='tag_ids']" position="after">
+                <div class="o_kanban_record_bottom flex_views">
+                        <div class="left_margin_views">
+                            <span title="Downloads"> <i class="fa fa-download"></i> <field name="download_count"/>
+                                Downloads
+                            </span>
+                        </div>
+                        <div>
+                            <span title="Commitment"> <i class="fa fa-eye"></i> <field name="unique_view_count"/>
+                                Views
+                            </span>
+                        </div>
+                    </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_document_tree_new" model="ir.ui.view">
+        <field name="name">document.tree.new</field>
+        <field name="model">documents.document</field>
+        <field name="arch" type="xml">
+            <tree create="False" default_order="is_emergency desc, create_date desc" class="custome_size_tier_defi">
+                <field name="code_system"/>
+                <field name="issuing_authority"/>
+                <field name="document_code"/>
+                <field name="name"/>
+                <field name="custom_update_date"/>
+                <field name="version"/>
+                <field name="create_uid"/>
+                <field name="release_date"/>
+                <field name="expiration_date"/>
+                <field name="is_emergency" optional="show"/>
+                <field name="state" decoration-bf="state == 'draft'" decoration-danger="state == 'rejected'"
+                       decoration-warning="state == 'in_progress'" decoration-success="state == 'confirmed'"
+                       decoration-primary="state == 'done'"
+                />
+            </tree>
+        </field>
+    </record>
+
+    <odoo>
+        <data>
+            <record id="document_view_search_inherit" model="ir.ui.view">
+                <field name="name">document.search.view.inherit</field>
+                <field name="inherit_id" ref="documents.document_view_search"/>
+                <field name="model">documents.document</field>
+                <field name="arch" type="xml">
+                    <xpath expr="//search/field[@name='name']" position="before">
+                        <field name="completed_name" string="Name Detail"/>
+                        <field name="code_system" string="Document Code System"/>
+                        <field name="document_type"/>
+                        <field name="document_code"/>
+                        <field name="version"/>
+                        <field name="create_uid"/>
+                    </xpath>
+                    <xpath expr="//search/field[@name='tag_ids']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//search/field[@name='owner_id']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//search/field[@name='partner_id']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//search/field[@name='index_content']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//search/field[@name='create_uid']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//search/field[@name='name']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//search/field[@name='file_extension']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//search/field[@name='type']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//search/filter[@name='locked_filter']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//search/filter[@name='requested_filter']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//search/filter[@name='locked_filter']" position="after">
+                        <filter string="Expiration This Year" name="expiration_this_year"
+                                domain="[('expiration_date', '&lt;', context_today().strftime('%Y-%m-%d'))]"/>
+                        <filter name="is_expiration" string="About to expire" domain="[('is_expiration', '=', True)]"/>
+                        <filter string="Archived" name="Inactive" domain="[('active', '=', False)]"/>
+                        <filter string="Draft" name="state" domain="[('state', '=', 'draft')]"/>
+                        <filter string="In Process" name="state" domain="[('state', '=', 'in_progress')]"/>
+                        <filter string="Confirmed" name="state" domain="[('state', '=', 'confirmed')]"/>
+                        <filter string="Done" name="state" domain="[('state', '=', 'done')]"/>
+                        <filter string="Rejected" name="state" domain="[('state', '=', 'rejected')]"/>
+                        <filter string="Release Date" name="release_date" domain="[]" date="release_date"/>
+                        <filter string="Last Edit" name="custom_update_date" domain="[]" date="custom_update_date"/>
+                        <filter string="Create Date" name="create_uid" domain="[]" date="create_uid"/>
+                        <filter string="Expiration Date" name="expiration_date" domain="[]" date="expiration_date"/>
+                    </xpath>
+                </field>
+            </record>
+        </data>
+    </odoo>
+
+    <odoo>
+        <data>
+            <record id="s_document_document_view_search_inherit_documents_product" model="ir.ui.view">
+                <field name="name">s_document.document.view_search.inherit.documents.product</field>
+                <field name="inherit_id" ref="documents_product.document_view_search_inherit_documents_product"/>
+                <field name="model">documents.document</field>
+                <field name="arch" type="xml">
+                    <xpath expr="//field[@name='product_template_id']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//field[@name='product_id']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                </field>
+            </record>
+        </data>
+    </odoo>
+
+    <record id="documents.document_action" model="ir.actions.act_window">
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'kanban', 'view_id': ref('documents.document_view_kanban')}),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('s_document.view_document_tree_new')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('s_document.view_sdocument_document_view_new_form')})]"/>
+    </record>
+</odoo>

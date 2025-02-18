@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sd_tags_view_tree_inher" model="ir.ui.view">
+            <field name="name">sd.tag.view.tree.inher</field>
+            <field name="model">documents.facet</field>
+            <field name="inherit_id"
+                   ref="documents.facet_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="class" add="custom_tag" separator=" "/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

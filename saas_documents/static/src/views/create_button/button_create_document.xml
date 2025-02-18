@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="saas_documents.DocumentsViews.Buttons" t-inherit="documents.DocumentsViews.ControlPanel" t-inherit-mode="extension">
+        <xpath expr="//ul[contains(@class, 'dropdown-menu')]" position="before">
+            <label for="CreateDocument" t-attf-class="btn btn-primary o_documents_kanban_create_file"
+                   data-hotkey="n" t-on-click.stop.prevent="onClickCreateDocuments" style="margin-left: 5px"> Create Document </label>
+        </xpath>
+    </t>
+</templates>

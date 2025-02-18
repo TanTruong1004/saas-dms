@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="s_doc.DocumentsInspector.buttons" t-inherit="documents.DocumentsInspector.buttons"
+       t-inherit-mode="extension">
+        <xpath expr="//div[contains(@class, 'btn-group')]/t/t/button[contains(@class, 'o_inspector_split')]"
+               position="attributes">
+            <attribute name="style">display: none;</attribute>
+        </xpath>
+
+        <xpath expr="//div[contains(@class, 'btn-group')]/t/t/button[@title='Replace']" position="attributes">
+            <attribute name="style">display: none;</attribute>
+        </xpath>
+
+        <xpath expr="//div[contains(@class, 'btn-group')]/t/t/button[@title='Replace']" position="after">
+            <t t-if="records[0].data.state == 'draft'">
+                <button t-if="records[0].data.type !== 'url'" class="o_inspector_button o_inspector_replace btn"
+                        title="Replace" t-on-click.stop.prevent="() => this.documentsReplaceInput.el.click()"
+                        t-att-disabled="editDisabled || locked">
+                    <i class="fa fa-fw fa-retweet"/>
+                </button>
+            </t>
+        </xpath>
+        <xpath expr="//button[hasclass('o_inspector_download')]" position="after">
+            <button class="btn o_inspector_button o_custom_image_button" title="Open Document"
+                    t-on-click.stop.prevent="onOpenDocument">
+                <i class="fa fa-folder-open"/>
+            </button>
+        </xpath>
+    </t>
+</templates>

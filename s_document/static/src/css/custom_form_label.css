@@ -1,0 +1,313 @@
+.o_required_star {
+    color: #FF0303;
+}
+
+div.custom_view_kanban .o_documents_inspector .o_documents_inspector_info .o_inspector_table .o_inspector_label > * {
+    display: block;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+
+div.custom_view_kanban .flex_views {
+    display: flex;
+    justify-content: space-between;
+}
+
+div.custom_view_kanban td.o_inspector_value.w-100 {
+    max-width: 100px;
+    word-wrap: break-word;
+}
+
+div.custom_view_kanban td > div.o_field_widget.o_field_text {
+    max-height: 100px;
+    overflow: hidden;
+}
+
+/*!*Form document tier upload*!*/
+div.custome_size_tier_defi_form .align-middle.o_column_sortable.position-relative.cursor-pointer:nth-child(n+2) {
+    width: 20% !important;
+    word-wrap: break-word;
+}
+
+div.custome_size_tier_defi_form .align-middle.o_column_sortable.position-relative.cursor-pointer .d-block {
+    white-space: normal;
+    text-align: left;
+}
+
+div.custom_font_size .text-center {
+    text-align: left !important;
+}
+
+div.custome_size_tier_defi_form .align-middle.cursor-default.opacity-trigger-hover {
+    width: 20% !important;
+}
+
+div.custom_font_size .o_field_widget.o_readonly_modifier.o_required_modifier.o_field_text {
+    word-wrap: break-word;
+}
+
+
+div.custome_size_tier_defi_form .align-middle.cursor-default.o_list_number_th .d-block {
+    white-space: normal;
+}
+
+.custom_view_kanban .o_documents_inspector .o_documents_inspector_info .o_inspector_tags .o_inspector_tag:first-child > span {
+    white-space: pre-wrap !important;
+}
+
+.custom_view_kanban .o_documents_inspector .o_documents_inspector_info .o_inspector_tags .o_inspector_tag > span {
+    white-space: pre-wrap !important;
+}
+
+.custom_view_kanban .o_documents_inspector .o_documents_inspector_info .o_inspector_tags .o_inspector_tag .o_inspector_tag_remove {
+    display: none;
+}
+
+.custom_tag_id > div > span {
+    line-height: 1.4 !important;
+}
+
+div.custom_font_size .o_form_label {
+    font-size: 13.5px !important;
+}
+
+.custom_dislay_activiti {
+    position: absolute;
+    right: 0;
+}
+
+.sale_tbody td.text-right {
+    text-transform: none;
+}
+
+.custom_view_kanban .o_documents_inspector .o_documents_inspector_info .o_inspector_fields input {
+    display: none;
+}
+
+.custom_font_size .o_field_widget.o_field_many2many_tags .badge {
+    line-height: inherit !important;
+}
+
+/*Tier review upload document*/
+div.custom_font_size .o_data_cell.cursor-pointer.o_field_cell {
+    overflow: visible !important;
+    white-space: normal !important;
+}
+
+
+div.custom_font_size .o_data_cell.cursor-pointer.o_field_cell.custome_size_tier_review.o_list_char.o_required_modifier {
+    white-space: pre-wrap !important;
+}
+
+div.custom_font_size .o_data_cell.cursor-pointer.o_field_cell.custome_size_tier_review.o_list_many2one.o_required_modifier {
+    white-space: pre-wrap !important;
+    word-wrap: break-word;
+}
+
+/*Tag*/
+div.custom_workspace th:nth-child(n+2) {
+    width: 100% !important;
+    position: relative !important;
+    height: 4rem !important;
+}
+
+div.custom_workspace .fa-angle-down:before {
+    margin-right: 10px !important;
+}
+
+div.custom_workspace .fa-angle-up:before {
+    margin-right: 10px !important;
+}
+
+div.custom_workspace th div {
+    position: absolute !important;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+div.custom_workspace th div .d-block {
+    white-space: pre-wrap !important;
+    word-wrap: break-word;
+}
+
+div.custom_workspace .o_data_cell {
+    white-space: pre-wrap !important;
+    word-wrap: break-word;
+}
+
+.custom_workspace .o_field_widget.o_field_many2many_tags .badge {
+    line-height: inherit !important;
+}
+
+.custom_workspace .o_field_widget.o_field_many2many_tags .o_tag_badge_text.text-truncate {
+    white-space: pre-wrap !important;
+    word-break: break-word;
+}
+
+.custom_tag .lh-1 {
+    line-height: inherit !important;
+}
+
+.custom_tag .o_data_cell {
+    white-space: pre-wrap !important;
+    word-break: break-word;
+}
+
+/*Image update and delete upload file*/
+.custom_font_size .position-absolute.d-flex.justify-content-between.w-100.bottom-0.opacity-0.opacity-100-hover {
+    display: none !important;
+}
+
+/* Ẩn văn bản cũ */
+div.custom_view_kanban .o_search_panel_section.o_search_panel_filter[data-section-id = '3'] .o_search_panel_label_title.text-truncate {
+    color: transparent;
+    position: relative;
+}
+
+div.custom_view_kanban .o_search_panel_section.o_search_panel_filter[data-section-id = '3'] li:first-child span.o_search_panel_label_title.text-truncate::before {
+    content: "Đính kèm với";
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+div.custom_view_kanban .o_search_panel_section.o_search_panel_filter[data-section-id = '3'] li:nth-child(2) span.o_search_panel_label_title.text-truncate::before {
+    content: "Không phải tài liệu";
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+div.custom_view_kanban .o_search_panel_section.o_search_panel_filter[data-section-id = '3'] li:nth-child(2) span.o_search_panel_label_title.text-truncate {
+    width: 100%;
+}
+
+/*kanban trash document*/
+.custom_view_kanban .o_search_panel_category_value.list-group-item.py-1.cursor-pointer.border-0.pe-0.o_has_treeEntry.o_all_or_trash_category {
+    display: none;
+}
+
+.custom_view_kanban .o_inspector_folder_description {
+    display: none;
+}
+
+/*Danh sach cam ket*/
+div.custom_commitment th {
+    width: 20% !important;
+    position: relative !important;
+    height: 4rem !important;
+}
+
+div.custom_commitment th div {
+    position: absolute !important;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+div.custom_commitment th div .d-block {
+    white-space: pre-wrap !important;
+    word-wrap: break-word;
+}
+
+div.custom_commitment .o_data_cell {
+    white-space: pre-wrap !important;
+    word-wrap: break-word;
+}
+
+/*Danh sach download cuar toi*/
+div.custom_download_view th div .d-block {
+    white-space: pre-wrap !important;
+    word-wrap: break-word;
+    text-align: left;
+    margin-left: auto;
+}
+
+div.custom_download_view .o_list_renderer .o_list_table thead .o_list_number_th {
+    text-align: left;
+}
+
+div.custom_download_view .text-center {
+    text-align: left !important;
+}
+
+.o-mail-NotificationItem-text.text-truncate.opacity-75 {
+    white-space: pre-wrap !important;
+    word-wrap: break-word;
+}
+
+/*Role history*/
+div.custom_history_tree th {
+    width: 20% !important;
+    position: relative !important;
+    height: 4rem !important;
+}
+
+div.custom_history_tree th div {
+    position: absolute !important;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+div.custom_history_tree th div .d-block {
+    white-space: pre-wrap !important;
+    word-wrap: break-word;
+}
+
+div.custom_history_tree .o_data_cell {
+    white-space: pre-wrap !important;
+    word-wrap: break-word;
+}
+
+/*Reponsive mobile*/
+
+@media (max-width: 768px) {
+    .o_list_renderer {
+        overflow-x: inherit;
+    }
+}
+
+@media (max-width: 445px) {
+    div.custom_font_size .alert.alert-warning p {
+        width: 77%;
+    }
+
+    div.custom_font_size .alert.alert-warning p button {
+        margin-bottom: 3px;
+    }
+
+    div.custom_download_view .alert.alert-warning p {
+        width: 77%;
+    }
+
+    div.custom_download_view .alert.alert-warning p button {
+        margin-bottom: 3px;
+    }
+
+    div.custom_workspace th:nth-child(n+2) {
+        width: 100px !important;
+    }
+
+    div.custom_history_tree th {
+        width: 5rem !important;
+    }
+}
+
+

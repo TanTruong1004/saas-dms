@@ -1,0 +1,57 @@
+<odoo>
+    <record id="view_document_commit_wizard_form" model="ir.ui.view">
+        <field name="name">document.commitment.wizard.form</field>
+        <field name="model">document.commitment.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Commit Confirmation">
+                <div class="o_row">
+                    <field name="is_commited" widget="radio" required="1"/>
+                </div>
+                <group>
+                    <field name="commitment" required="1"/>
+                    <field name="feedback"/>
+                </group>
+                <footer>
+                    <button string="Confirm" type="object" name="action_confirm" class="oe_highlight"
+                            required="is_commited"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_document_commit_wizard_tree" model="ir.ui.view">
+        <field name="model">document.commitment.wizard</field>
+        <field name="arch" type="xml">
+            <tree class="custom_commitment">
+                <field name="document_id"/>
+                <field name="create_uid"/>
+                <field name="create_date" widget="datetime" options="{'show_time': false}"/>
+                <field name="commitment"/>
+                <field name="feedback"/>
+            </tree>
+        </field>
+    </record>
+
+        <record id="view_document_commit_wizard_tree_search" model="ir.ui.view">
+        <field name="model">document.commitment.wizard</field>
+        <field name="arch" type="xml">
+            <search string="Documents">
+                <field name="document_id"/>
+                <field name="create_uid"/>
+                <field name="create_date"/>
+                <field name="commitment"/>
+                <field name="feedback"/>
+
+                <filter string="Create Date" name="create_date" domain="[]" date="create_date"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_document_commit_wizard" model="ir.actions.act_window">
+        <field name="name">Document Commitment</field>
+        <field name="res_model">document.commitment.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

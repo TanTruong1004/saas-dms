@@ -1,0 +1,30 @@
+<odoo>
+    <data noupdate="0">
+        <!-- Bản ghi cho bảng my.model -->
+        <record id="my_record_1" model="onlyoffice.permission">
+            <field name="code">edit</field>
+            <field name="name">Sửa</field>
+            <field name="description">Quyền sửa tài liệu</field>
+        </record>
+        <record id="my_record_2" model="onlyoffice.permission">
+            <field name="code">review</field>
+            <field name="name">Đọc</field>
+            <field name="description">Quyền xem tài liệu</field>
+        </record>
+        <record id="my_record_3" model="onlyoffice.permission">
+            <field name="code">comment</field>
+            <field name="name">Bình luận</field>
+            <field name="description">Quyền bình luận tài liệu</field>
+        </record>
+        <record id="my_record_4" model="onlyoffice.permission">
+            <field name="code">download</field>
+            <field name="name">Tải</field>
+            <field name="description">Quyền tải tài liệu</field>
+        </record>
+        <record id="my_record_5" model="onlyoffice.permission">
+            <field name="code">print</field>
+            <field name="name">In</field>
+            <field name="description">Quyền in tài liệu</field>
+        </record>
+    </data>
+</odoo>

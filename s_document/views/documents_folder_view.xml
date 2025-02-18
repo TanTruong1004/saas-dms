@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="folder_view_form_inherit" model="ir.ui.view">
+            <field name="name">documents.folder.inherit</field>
+            <field name="model">documents.folder</field>
+            <field name="inherit_id" ref="documents.folder_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='parent_folder_id']" position="attributes">
+                    <attribute name="domain">['&amp;', ('id','!=',id),'|',('company_id', '=', False),('company_id', '=',
+                        company_id)]
+                    </attribute>
+                    <attribute name="groups">base.group_multi_company</attribute>
+                </xpath>
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="class" add="custom_workspace" separator=" "/>
+                </xpath>
+                <xpath expr="//sheet/group/group/field[@name='parent_folder_id']" position="after">
+                    <field name="is_approve"/>
+                </xpath>
+                <xpath expr="//button[@name='action_see_actions']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

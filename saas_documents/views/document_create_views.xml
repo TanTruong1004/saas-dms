@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="documents_create_view_form" model="ir.ui.view">
+            <field name="name">documents_create_view_form</field>
+            <field name="model">documents.create</field>
+            <field name="arch" type="xml">
+                <form string="Document Create">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="Document Name"/>
+                            <h1>
+                                <field name="name" placeholder="e.g. DCD Document" required="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="type" required="1"/>
+                                <field name="folder_id" required="1"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button name="action_document_create" type="object"
+                                    class="btn-secondary" data-hotkey="c"> Create </button>
+                            <button special="cancel" data-hotkey="q" class="btn-primary"> Cancel </button>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

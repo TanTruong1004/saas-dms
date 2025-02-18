@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Scheduled action to check document expiration dates -->
+        <record id="ir_cron_check_document_expiration" model="ir.cron">
+            <field name="name">Check Document Expiration Dates</field>
+            <field name="model_id" ref="model_documents_document"/>
+            <field name="state">code</field>
+            <field name="code">model.check_expiration_dates()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+        </record>
+    </data>
+</odoo>

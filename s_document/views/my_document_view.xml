@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_document_my_download_tree" model="ir.ui.view">
+            <field name="name">document.my.download.tree</field>
+            <field name="model">download.documents</field>
+            <field name="arch" type="xml">
+                <tree create="False" class="custome_size_tier_defi">
+                    <field name="code_system"/>
+                    <field name="issuing_authority"/>
+                    <field name="document_code"/>
+                    <field name="document_id"/>
+                    <field name="last_edit_date"/>
+                    <field name="version"/>
+                    <field name="create_uid"/>
+                    <field name="release_date"/>
+                    <field name="expiration_date"/>
+                    <field name="is_emergency" optional="show"/>
+                    <field name="state" decoration-bf="state == 'draft'" decoration-danger="state == 'rejected'"
+                           decoration-warning="state == 'in_progress'" decoration-success="state == 'confirmed'"
+                           decoration-primary="state == 'canceled'"
+                    />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_document_my_download_tree_search" model="ir.ui.view">
+            <field name="name">document.my.download.tree.search</field>
+            <field name="model">download.documents</field>
+            <field name="arch" type="xml">
+                <search string="Documents">
+                    <field name="code_system"/>
+                    <field name="issuing_authority"/>
+                    <field name="document_type"/>
+                    <field name="document_code"/>
+                    <field name="document_id"/>
+                    <field name="version"/>
+                    <field name="create_uid"/>
+
+                    <filter string="Draft" name="state" domain="[('state', '=', 'draft')]"/>
+                    <filter string="In Process" name="state" domain="[('state', '=', 'in_progress')]"/>
+                    <filter string="Confirmed" name="state" domain="[('state', '=', 'confirmed')]"/>
+                    <filter string="Rejected" name="state" domain="[('state', '=', 'rejected')]"/>
+                    <filter string="Last Edit Date" name="last_edit_date" domain="[]" date="last_edit_date"/>
+                    <filter string="Release Date" name="release_date" domain="[]" date="release_date"/>
+                    <filter string="Expiration Date" name="expiration_date" domain="[]" date="expiration_date"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="document_my_upload_act_window" model="ir.actions.act_window">
+            <field name="name">My Upload Request</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">documents.document</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('s_document.view_document_tree_new')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('s_document.view_sdocument_document_view_new_form')})]"/>
+            <field name="domain">[('owner_id', '=', uid)]</field>
+        </record>
+
+        <record id="document_my_download_act_window" model="ir.actions.act_window">
+            <field name="name">My Download Request</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">download.documents</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_document_my_download_tree"/>
+            <field name="domain">[('create_uid', '=', uid)]</field>
+        </record>
+    </data>
+</odoo>

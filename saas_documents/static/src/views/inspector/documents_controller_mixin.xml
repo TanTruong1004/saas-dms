@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="saas_documents.DocumentsViews.Buttons" t-inherit="documents.DocumentsViews.ControlPanel" t-inherit-mode="extension">
+        <xpath expr="//button[contains(@class, 'btn btn-link dropdown-item o_documents_kanban_url')]" position="replace">
+            <button type="button" class="btn btn-link dropdown-item o_documents_kanban_url"
+                    t-att-disabled="folder.id and !folder.has_write_access"
+                    t-on-click.stop.prevent="onClickDocumentsAddUrl" data-hotkey="l">
+                    Add A Link
+            </button>
+        </xpath>
+        <xpath expr="//button[contains(@class, 'btn btn-link dropdown-item o_documents_kanban_share_domain')]" position="attributes">
+            <attribute name="class" separator=" " add="d-none"/>
+        </xpath>
+    </t>
+</templates>

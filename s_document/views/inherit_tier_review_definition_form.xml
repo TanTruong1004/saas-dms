@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_inherit_tier_definition_inher_view_form" model="ir.ui.view">
+        <field name="name">tier.review.definition_inher_view_form</field>
+        <field name="model">tier.definition</field>
+        <field name="inherit_id" ref="base_tier_validation.tier_definition_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='approve_sequence_bypass_div']/span"
+                   position="attributes">
+                <attribute name="style">display:none;</attribute>
+            </xpath>
+            <xpath expr="//field[@name='approve_sequence_bypass']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='notify_on_pending']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='notify_on_pending']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='rejected_server_action_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='auto_validate']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='server_action_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_inherit_tier_validation_view_form" model="ir.ui.view">
+        <field name="name">tier.review.validation_inher_view_form</field>
+        <field name="model">tier.definition</field>
+        <field name="inherit_id" ref="tier_validation.tier_definition_inherit_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='notify_status_on_next']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <odoo>
+        <data>
+            <record id="document_view_search_inherit" model="ir.ui.view">
+                <field name="name">document.search.view.inherit</field>
+                <field name="inherit_id" ref="documents.document_view_search"/>
+                <field name="model">documents.document</field>
+                <field name="arch" type="xml">
+                    <xpath expr="//search/field[@name='file_extension']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//search/field[@name='name']" position="before">
+                        <field name="file_content" string="File Content"/>
+                        <field name="file_extension"/>
+                    </xpath>
+                </field>
+            </record>
+            <record id="document_view_list_inherit" model="ir.ui.view">
+                <field name="name">documents.document.list.inherit</field>
+                <field name="model">documents.document</field>
+                <field name="inherit_id" ref="documents.documents_view_list"/>
+                <field name="arch" type="xml">
+                    <xpath expr="//tree" position="attributes">
+                        <attribute name="class">custome_size_tier_defi</attribute>
+                    </xpath>
+                    <xpath expr="//tree/field[@name='create_date']" position="after">
+                        <field name="state_read"/>
+                        <field name="state_push"/>
+                    </xpath>
+                </field>
+            </record>
+            <record id="document_view_form_inherit" model="ir.ui.view">
+                <field name="name">document.view.form.inherit</field>
+                <field name="model">documents.document</field>
+                <field name="inherit_id" ref="documents.document_view_form"/>
+                <field name="arch" type="xml">
+                    <xpath expr="//header" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//button[@name='open_resource']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//sheet/div/h1/field[@name='name']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//sheet/group/group/field[@name='datas']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//sheet/group/group/field[@name='url']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//sheet/group/group/field[@name='folder_id']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//sheet/group/group/field[@name='owner_id']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//sheet/group/group/field[@name='partner_id']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//sheet/group/group/field[@name='tag_ids']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//sheet/group/group/field[@name='type']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//sheet/group/group/field[@name='create_date']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//sheet/group/group/field[@name='create_uid']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//sheet/group/group/field[@name='lock_uid']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//sheet/group/field[@name='group_ids']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//sheet/group/field[@name='company_id']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//sheet/group/field[@name='file_size']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//sheet/group/field[@name='mimetype']" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </xpath>
+                    <xpath expr="//sheet" position="inside">
+                        <group class="o_url_group">
+                            <field name="link_url" widget="CopyClipboardChar" readonly="1" force_save="1"/>
+                        </group>
+                        <group class="o_url_group">
+                            <group>
+                                <field name="global_permission" force_save="1"/>
+                            </group>
+                            <group>
+                                <field name="onlyoffice_permission_ids" invisible="not global_permission"
+                                       widget="many2many_tags" required="global_permission" force_save="1"/>
+                            </group>
+                        </group>
+
+                    </xpath>
+                    <xpath expr="//sheet/group/group/field[@name='datas']" position="after">
+                        <field name="uuid" invisible="1"/>
+                        <field name="hide_reviews" invisible="1"/>
+                        <field name="need_validation" invisible="1"/>
+                        <field name="validated" invisible="1"/>
+                        <field name="rejected" invisible="1"/>
+                        <field name="can_review" invisible="1"/>
+                        <field name="can_forward" invisible="1"/>
+                        <field name="next_review" invisible="1"/>
+                        <field name="review_ids" invisible="1"/>
+                    </xpath>
+
+                    <xpath expr="//sheet" position="inside">
+                        <notebook>
+                            <page name="document_share_access_ids" string="Document Share Access">
+                                <field name="document_share_access_ids" readonly="global_permission">
+                                    <tree string="Document Share Access" editable="bottom">
+                                        <field name="user_id" required="1" domain="[('id', '!=', uid)]"/>
+                                        <field name="onlyoffice_permission_ids" required="1" widget="many2many_tags"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </xpath>
+                </field>
+            </record>
+        </data>
+    </odoo>
+</odoo>

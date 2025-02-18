@@ -1,0 +1,50 @@
+<odoo>
+
+    <record id="document_review_update_view" model="ir.ui.view">
+        <field name="name">tier_review.inherit.tier_review_view_report</field>
+        <field name="model">tier.review</field>
+        <field name="inherit_id"
+               ref="base_tier_validation_report.tier_review_report_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="default_order">is_emergency desc, create_date desc</attribute>
+                <attribute name="class">custome_size_tier_defi</attribute>
+            </xpath>
+            <xpath expr="//field[@name='next_review']" position="after">
+                <field name="is_emergency"/>
+            </xpath>
+            <xpath expr="//field[@name='resource_name']" position="before">
+                <field name="code_system"/>
+                <field name="issuing_authority"/>
+                <field name="document_code"/>
+                <field name="completed_name"/>
+                <field name="custom_update_date"/>
+                <field name="version"/>
+                <field name="release_date"/>
+                <field name="expiration_date"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="sdoc_tier_review_my_upload_action" model="ir.actions.act_window">
+        <field name="name">My Reviews Upload</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">tier.review</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[("reviewer_ids", "in", uid),('resource_type', '=', 'documents.document')]</field>
+        <field name="context">{"search_default_pending": True}</field>
+        <field name="view_id" ref="base_tier_validation_report.tier_review_report_tree"/>
+        <field name="search_view_id" ref="base_tier_validation_report.tier_review_report_search"/>
+    </record>
+
+    <record id="sdoc_tier_review_my_download_action" model="ir.actions.act_window">
+        <field name="name">My Reviews Download</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">tier.review</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[("reviewer_ids", "in", uid),('resource_type', '=', 'download.documents')]</field>
+        <field name="context">{"search_default_pending": True}</field>
+        <field name="view_id" ref="base_tier_validation_report.tier_review_report_tree"/>
+        <field name="search_view_id" ref="base_tier_validation_report.tier_review_report_search"/>
+    </record>
+</odoo>

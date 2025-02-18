@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+    <t t-name="documents.DocumentsInspector.buttons.inherit" t-inherit="documents.DocumentsInspector.buttons"
+       t-inherit-mode="extension">
+        <xpath expr="//button[contains(@class, 'o_inspector_download')]" position="attributes">
+            <attribute name="class" separator=" " add="d-none"/>
+        </xpath>
+        <xpath expr="//button[hasclass('o_inspector_download')]" position="after">
+            <button t-if="records[0].data.is_downloadable"
+                    class="o_inspector_button o_inspector_download btn" title="Download"
+                    t-on-click.stop.prevent="onDownload"
+                    t-att-disabled="records.every(record => record.data.type == 'empty')" data-hotkey="y">
+                <i class="fa fa-fw fa-download"/>
+            </button>
+        </xpath>
+        <xpath expr="//button[@class='o_inspector_button o_inspector_open_chatter btn float-end rounded-circle me-1 px-2']"
+               position="attributes">
+            <attribute name="title">Mở cuộc trò chuyện</attribute>
+        </xpath>
+        <xpath expr="//button[@class='o_inspector_button o_inspector_share btn']" position="attributes">
+            <attribute name="title">Chia sẻ lựa chọn này</attribute>
+            <attribute name="class" separator=" " add="d-none"/>
+        </xpath>
+        <xpath expr="//button[hasclass('o_inspector_share')]" position="after">
+            <button t-if="!records.every(rec => ['empty', 'url'].includes(rec._values.type))"
+                    class="o_inspector_button o_inspector_share btn" title="Share This Selection"
+                    groups="documents.group_documents_user" t-on-click.stop.prevent="on_Share" data-hotkey="m">
+                <i class="fa fa-fw fa-share-alt"/>
+            </button>
+        </xpath>
+    </t>
+    <t t-name="s_doc.DocumentsInspector.documentsInfo" t-inherit="documents.DocumentsInspector.documentsInfo"
+       t-inherit-mode="extension">
+        <xpath expr="//tbody/t[4]" position="after">
+            <t>
+                <t t-call="documents.DocumentsInspector.field">
+                    <t t-set="fieldName" t-translation="off">state_read</t>
+                </t>
+                <t t-call="documents.DocumentsInspector.field">
+                    <t t-set="fieldName" t-translation="off">state_push</t>
+                </t>
+            </t>
+            <t t-if="isDebugMode">
+                <t t-call="documents.DocumentsInspector.field">
+                    <t t-set="fieldName" t-translation="off">error_description_read</t>
+                </t>
+                <t t-call="documents.DocumentsInspector.field">
+                    <t t-set="fieldName" t-translation="off">error_description_push</t>
+                </t>
+            </t>
+        </xpath>
+    </t>
+</templates>

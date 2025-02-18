@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<templates xml:space="preserve">
+    <t t-inherit="web.FormLabel" t-inherit-mode="extension">
+        <xpath expr="//label/t[@t-esc='props.string']" position="replace">
+            <t t-set="required_star" t-value="' *'" t-if="props.fieldInfo.required"/>
+
+            <label>
+                 <t t-esc="props.string"/>
+                <span class="o_required_star" t-raw="required_star"/>
+            </label>
+
+        </xpath>
+    </t>
+
+    <t t-inherit="web.SelectionField" t-inherit-mode="extension">
+        <xpath expr="//select[contains(@class, 'o_input')]" position="attributes">
+            <t t-if="this.props.record.isRequired(this.props.name)">
+                <attribute name="class">o_input pe-3 o_required_modifier</attribute>
+            </t>
+            <t t-else="">
+                <attribute name="class">o_input pe-3</attribute>
+            </t>
+        </xpath>
+    </t>
+
+</templates>

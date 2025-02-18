@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="s_docs.DocumentsViews.Buttons" t-inherit="documents.DocumentsViews.ControlPanel" t-inherit-mode="extension">
+        <xpath expr="//button[contains(@class, 'dropdown-toggle-split')]" position="after">
+            <button type="button" t-attf-class="btn btn-primary o_documents_kanban_create"
+                t-on-click.stop.prevent="onClickCreateDocument"> Document Proposal </button>
+        </xpath>
+    </t>
+</templates>

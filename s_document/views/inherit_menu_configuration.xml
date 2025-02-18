@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <record id="documents_spreadsheet.menu_technical_spreadsheet_template" model="ir.ui.menu">
+            <field name="active" eval="False"/>
+        </record>
+
+        <record id="documents.workflow_rules_menu" model="ir.ui.menu">
+            <field name="active" eval="False"/>
+        </record>
+
+        <record id="documents.share_menu" model="ir.ui.menu">
+            <field name="active" eval="False"/>
+        </record>
+
+        <record id="documents.mail_activity_plan_menu" model="ir.ui.menu">
+            <field name="active" eval="False"/>
+        </record>
+        <record id="documents.mail_activity_type_menu" model="ir.ui.menu">
+            <field name="active" eval="False"/>
+        </record>
+    </data>
+
+</odoo>

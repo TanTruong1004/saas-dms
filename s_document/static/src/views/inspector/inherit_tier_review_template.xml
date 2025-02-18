@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="document_inherit_tier_review_template.xml" owl="1" t-inherit="base_tier_validation.Collapse"
+       t-inherit-mode="extension">
+        <xpath expr="//th[@name='th_name' and contains(@class, 'text-right')]"
+               position="attributes">
+            <attribute name="class" separator=" " add="d-none"/>
+        </xpath>
+
+        <xpath expr="//th[@name='th_done_by' and contains(@class, 'text-right')]"
+               position="attributes">
+            <attribute name="class" separator=" " add="d-none"/>
+        </xpath>
+
+        <xpath expr="//th[@name='th_comment' and contains(@class, 'text-right')]"
+               position="attributes">
+            <attribute name="class" separator=" " add="d-none"/>
+        </xpath>
+
+        <xpath expr="//th[@name='th_requested_by' and contains(@class, 'text-left')]"
+               position="after">
+            <th
+                    name="th_name"
+                    class="text-right"
+            >Approval name
+            </th>
+        </xpath>
+
+        <xpath expr="//th[@name='th_reviewed_date' and contains(@class, 'text-right')]"
+               position="before">
+            <th
+                    name="th_done_by"
+                    class="text-right"
+            >Actual Approver
+            </th>
+        </xpath>
+
+        <xpath expr="//th[@name='th_reviewed_date' and contains(@class, 'text-right')]"
+               position="after">
+            <th
+                    name="th_comment"
+                    class="text-right"
+            >Reason for Approval/Denial
+            </th>
+        </xpath>
+    </t>
+</templates>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem name="Credentials" id="dropbox_credentials_menu" parent="documents.Config" action="dropbox_credentials_action_window" sequence="7"/>
+        <menuitem name="Onlyoffice Permission" id="onlyoffice_permission_menu" parent="documents.Config" action="onlyoffice_permission_action" sequence="8"/>
+    </data>
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="download_document_report_sequenceX" model="ir.sequence">
+        <field name="name">download document report sequence</field>
+        <field name="code">sequence.download.document</field>
+        <field name="prefix">DL</field>
+        <field name="padding">6</field>
+        <field name="company_id" eval="False"/>
+    </record>
+</odoo>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="documents_DocumentsViews_ControlPanel_documents_inherit" owl="1" t-inherit="documents.DocumentsViews.ControlPanel"
+       t-inherit-mode="extension">
+        <xpath expr="//span[(@t-att-data-tooltip='!folder.id and tooltip')]"
+               position="attributes">
+            <attribute name="class" separator=" " add="d-none"/>
+        </xpath>
+
+        <xpath expr="//button[@class='btn btn-primary dropdown-toggle
+             dropdown-toggle-split']"
+               position="attributes">
+            <attribute name="class" separator=" " add="d-none"/>
+        </xpath>
+    </t>
+</templates>

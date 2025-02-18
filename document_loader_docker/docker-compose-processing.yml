@@ -1,0 +1,14 @@
+services:
+  doc-loader:
+    image: dms_document_loader
+    ports:
+      - "5005:5005"
+    volumes:
+      - .:/document_loader
+      - /opt/saas/Odoo-SAAS-Data/tmp:/tmp
+    networks:
+      - soon_network
+    restart: always
+networks:
+  soon_network:
+    external: true

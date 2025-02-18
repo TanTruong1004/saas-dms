@@ -1,0 +1,1785 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* saas_documents
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e-20240603\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-19 10:10+0000\n"
+"PO-Revision-Date: 2024-06-19 10:10+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__can_review
+msgid "Can Review"
+msgstr ""
+
+#. module: saas_documents
+#: model:ir.model,name:saas_documents.model_documents_document
+msgid "Document"
+msgstr "Tài liệu"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__name
+msgid "Detail name document"
+msgstr "Tên chi tiết tài liệu"
+
+#. module: documents
+#: model:ir.model,name:documents.model_documents_document
+#: model_terms:ir.ui.view,arch_db:documents.document_view_kanban
+#: model_terms:ir.ui.view,arch_db:documents.document_view_search
+#: model_terms:ir.ui.view,arch_db:documents.documents_view_list
+msgid "Document"
+msgstr "Tài liệu"
+
+#. module: saas_documents
+#: model:ir.model.fields.selection,name:saas_documents.selection__documents_document__state__done
+msgid "Done"
+msgstr ""
+
+#. module: saas_documents
+#: model:ir.model.fields.selection,name:saas_documents.selection__documents_document__state_push__in_progress
+#: model:ir.model.fields.selection,name:saas_documents.selection__documents_document__state_read__in_progress
+msgid "In Progress"
+msgstr "Đang xử lý"
+
+#. module: saas_documents
+#: model:ir.model.fields.selection,name:saas_documents.selection__documents_document__state_push__error
+#: model:ir.model.fields.selection,name:saas_documents.selection__documents_document__state_read__error
+msgid "Error"
+msgstr "Lỗi"
+
+#. module: saas_documents
+#: model:ir.model.fields.selection,name:saas_documents.selection__documents_document__state_push__done
+#: model:ir.model.fields.selection,name:saas_documents.selection__documents_document__state_read__done
+msgid "Done"
+msgstr "Hoàn thành"
+
+#. module: saas_documents
+#: model:ir.model.fields.selection,name:saas_documents.selection__documents_document__state_push__pending
+#: model:ir.model.fields.selection,name:saas_documents.selection__documents_document__state_read__pending
+msgid "Pending"
+msgstr "Đang chờ xử lý"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__state_read
+msgid "State Read"
+msgstr "Trạng thái đọc"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_view_kanban_inherit
+msgid "State read:"
+msgstr "Trạng thái đọc:"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__state_push
+msgid "State Push"
+msgstr "Trạng thái đẩy"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_view_kanban_inherit
+msgid "State push:"
+msgstr "Trạng thái đẩy:"
+
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.res_config_settings_inherit_sdocument_view
+msgid "Url Configuration"
+msgstr "Cấu hình Url"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_view_search_inherit
+msgid "In Process"
+msgstr "Chờ duyệt"
+
+#. module: base_tier_validation
+#. odoo-python
+#. odoo-javascript
+#: model:ir.model.fields,field_description:base_tier_validation.field_tier_definition__has_comment
+#: model:ir.model.fields,field_description:base_tier_validation.field_tier_review__has_comment
+#, python-format
+msgid "Comment"
+msgstr "Nếu chọn, khi duyệt phải cho comment"
+
+#. module: base_tier_validation
+#. odoo-python
+#. odoo-javascript
+#: model:ir.model.fields,field_description:base_tier_validation.field_comment_wizard__comment
+#: model_terms:ir.ui.view,arch_db:base_tier_validation.view_comment_wizard
+#, python-format
+msgid "Comment"
+msgstr "Xác nhận"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__has_comment
+msgid "Has Comment"
+msgstr ""
+
+#. module: base_tier_validation
+#. odoo-python
+#. odoo-javascript
+#: code:addons/base_tier_validation/static/src/xml/tier_review_template.xml:0
+#: code:addons/base_tier_validation/models/tier_validation.py:0
+#, python-format
+msgid "Comment"
+msgstr "Lý do phê duyệt/từ chối"
+
+#. module: saas_documents
+#: model:ir.model.fields.selection,name:saas_documents.selection__documents_document__state__in_progress
+#: model:ir.model.fields.selection,name:saas_documents.selection__download_documents__state__in_progress
+msgid "In Progress"
+msgstr "Đang phê duyệt"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__need_validation
+msgid "Need Validation"
+msgstr ""
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__next_review
+msgid "Next Review"
+msgstr ""
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__rejected
+#: model:ir.model.fields,field_description:saas_documents.field_download_documents__rejected
+#: model:ir.model.fields.selection,name:saas_documents.selection__documents_document__state__rejected
+#: model:ir.model.fields.selection,name:saas_documents.selection__download_documents__state__rejected
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_view_search_inherit
+msgid "Rejected"
+msgstr "Từ chối"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__rejected_message
+msgid "Rejected Message"
+msgstr ""
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__reviewer_ids
+msgid "Reviewers"
+msgstr ""
+
+#. module: saas_documents
+#: model:ir.model,name:saas_documents.model_tier_definition
+msgid "Reviewers"
+msgstr ""
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__to_validate_message
+msgid "To Validate Message"
+msgstr ""
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__validated
+msgid "Validated"
+msgstr ""
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__validated_message
+msgid "Validated Message"
+msgstr ""
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__validation_status
+msgid "Validation Status"
+msgstr ""
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__review_ids
+msgid "Validations"
+msgstr ""
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__document_code
+msgid "Document Code"
+msgstr "Mã tài liệu"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__document_description
+msgid "Document Description"
+msgstr "Mô tả"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__completed_name
+#: model:ir.model.fields,field_description:saas_documents.field_tier_review__completed_name
+msgid "Document Name"
+msgstr "Tên tài liệu"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_tier_review__completed_name
+msgid "Document Name"
+msgstr "Tên chi tiết tài liệu"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_sdocument_document_view_form_inherit
+msgid "Document Name"
+msgstr "Tên tài liệu"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__issuing_sbu
+#: model:ir.model.fields,field_description:saas_documents.field_tier_review__issuing_sbu
+msgid "Issuing SBU"
+msgstr "SBU ban hành"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__version
+msgid "Version"
+msgstr "Phiên bản"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__release_date
+msgid "Release Date"
+msgstr "Ngày ban hành"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__request_reason
+msgid "Request Reason"
+msgstr "Lý do yêu cầu"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_document_release_wizard__expiration_date
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__expiration_date
+msgid "Expiration Date"
+msgstr "Ngày hết hiệu lực"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_document_release_wizard__folder_id
+msgid "Workspace"
+msgstr "Không gian làm việc"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_document_release_wizard_form
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_sdocument_document_view_form_inherit
+msgid "Release"
+msgstr "Ban hành"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_sdocument_document_view_new_form
+msgid "Release"
+msgstr "Ban hành"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/s_document/models/documents_document.py:0
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_document_release_wizard_form
+#, python-format
+msgid "Document Release"
+msgstr "Phát Hành Tài Liệu"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__sbu_code
+msgid "SBU Code"
+msgstr "Mã SBU"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_sdocument_document_view_form_inherit
+msgid "Commit"
+msgstr "Cam kết"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_document_commitment_wizard__commitment
+msgid "Commitment"
+msgstr "Nội dung cam kết"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/s_document/models/documents_document.py:0
+#, python-format
+msgid "Would you like to commit?"
+msgstr "Yêu cầu cam kết đọc hiểu tài liệu"
+
+#. module: saas_documents
+#: model:ir.model.fields.selection,name:saas_documents.selection__documents_document__state__confirmed
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_document_commit_wizard_form
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_view_search_inherit
+msgid "Confirm"
+msgstr "Xác nhận"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_view_search_inherit
+msgid "Done"
+msgstr "Phát hành"
+
+#. module: saas_documents
+#: model:ir.model.fields.selection,name:saas_documents.selection__documents_document__state__cancel
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_document_commit_wizard_form
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_document_release_wizard_form
+msgid "Cancel"
+msgstr "Hủy Bỏ"
+
+#. module: documents
+#: model:ir.ui.menu,name:documents.my_documents_menu_root
+#: model_terms:ir.ui.view,arch_db:documents.document_view_search
+msgid "My request"
+msgstr "Yêu cầu của tôi"
+
+#. module: documents
+#: model:ir.ui.menu,name:documents.my_download_menu
+msgid "My Request"
+msgstr "Yêu cầu của tôi"
+
+#. module: documents
+#: model:ir.ui.menu,name:documents.my_documents_review_menu_root
+msgid "My Review"
+msgstr "Phê duyệt của tôi"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/s_document/models/documents_document.py:0
+#, python-format
+msgid "Commitments"
+msgstr "Danh sách cam kết"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__commitment_required
+msgid "Request Commit"
+msgstr "Yêu cầu cam kết đọc hiểu"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__request_approve
+#: model:ir.model.fields,field_description:saas_documents.field_download_documents__request_approve
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_sdocument_document_view_new_form
+msgid "Request Download"
+msgstr "Yêu cầu tải xuống"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__is_emergency
+#: model:ir.model.fields,field_description:saas_documents.field_download_documents__is_emergency
+msgid "Emergency"
+msgstr "Khẩn cấp"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_sdocument_document_view_new_form
+msgid "File"
+msgstr "Tài liệu"
+
+#. module: documents
+#: model:ir.ui.menu,name:documents.my_download_menu
+msgid "My Download Request"
+msgstr "Yêu cầu download của tôi"
+
+#. module: documents
+#: model:ir.ui.menu,name:documents.my_upload_menu
+msgid "My Upload Request"
+msgstr "Yêu cầu upload của tôi"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_sdocument_document_view_new_form
+msgid "Share"
+msgstr "Chia sẻ"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_sdocument_document_view_new_form
+msgid "Lock"
+msgstr "Khóa"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_sdocument_document_view_new_form
+msgid "Archive"
+msgstr "Lưu trữ"
+
+
+#. module: saas_documents
+#: model:ir.model.fields.selection,name:saas_documents.selection__documents_document__state__done
+msgid "Published"
+msgstr "Ban hành"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_sdocument_document_view_new_form
+msgid "Restore"
+msgstr "Khôi phục"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_download_documents__document_type
+msgid "Document Type"
+msgstr "Loại tài liệu"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_download_documents__issuing_sbu
+msgid "Issuing SBU"
+msgstr "SBU ban hành"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__document_code
+#: model:ir.model.fields,field_description:saas_documents.field_download_documents__document_code
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_view_search_inherit
+#: model:ir.model.fields,field_description:saas_documents.field_tier_review__document_code
+msgid "Document Code"
+msgstr "Mã tài liệu"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_download_documents__last_edit_date
+msgid "Last Edit Date"
+msgstr "Ngày chỉnh sửa gần nhất"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__version
+#: model:ir.model.fields,field_description:saas_documents.field_download_documents__version
+#: model:ir.model.fields,field_description:saas_documents.field_tier_review__version
+msgid "Version"
+msgstr "Phiên bản"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__release_date
+#: model:ir.model.fields,field_description:saas_documents.field_download_documents__release_date
+#: model:ir.model.fields,field_description:saas_documents.field_tier_review__release_date
+msgid "Release Date"
+msgstr "Ngày ban hành"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_tier_review__release_date
+msgid "Release Date"
+msgstr "Ngày ban hành"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_document_release_wizard__expiration_date
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__expiration_date
+#: model:ir.model.fields,field_description:saas_documents.field_download_documents__expiration_date
+#: model:ir.model.fields,field_description:saas_documents.field_tier_review__expiration_date
+msgid "Expiration Date"
+msgstr "Ngày hết hiệu lực"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_download_documents__user_request_id
+msgid "Owner"
+msgstr "Người phụ trách"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_download_documents__date_request
+msgid "Date Request"
+msgstr "Ngày gửi yêu cầu"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_download_documents__reason_request
+msgid "Reason Request"
+msgstr "Lý do yêu cầu"
+
+#. module: saas_documents
+#: model:ir.model.fields.selection,name:saas_documents.selection__documents_document__state__confirmed
+#: model:ir.model.fields.selection,name:saas_documents.selection__download_documents__state__confirmed
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_view_search_inherit
+msgid "Confirmed"
+msgstr "Xác nhận"
+
+#. module: documents
+#: model_terms:ir.ui.view,arch_db:documents.document_view_search
+msgid "Requested"
+msgstr "Đã yêu cầu"
+
+#. module: saas_documents
+#. odoo-javascript
+#: code:addons/s_document/static/src/download_documents/documents_inspector.xml:0
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_download_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_sdocument_document_view_new_form
+#, python-format
+msgid "Download"
+msgstr "Tải xuống"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/s_document/models/documents_document.py:0
+#, python-format
+msgid "You cannot delete documents that are not in draft state."
+msgstr "Bạn chỉ có thể xóa tài liệu khi trạng thái của nó là nháp"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__is_download
+msgid "Downloaded"
+msgstr "Đã tải xuống"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__is_commited
+msgid "Commited"
+msgstr "Đã cam kết"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_sdocument_document_view_new_form
+msgid "Commit"
+msgstr "Cam kết"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_document_commitment_wizard__feedback
+msgid "Feedback"
+msgstr "Ý kiến đóng góp khác"
+
+#. module: saas_documents
+#: model:ir.model.fields.selection,name:saas_documents.selection__document_commitment_wizard__is_commited__0
+msgid "I read and commited"
+msgstr "Tôi cam kết đã đọc và hiểu tài liệu"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_sdocument_document_view_new_form
+msgid "List Download"
+msgstr "Tải xuống"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_sdocument_document_view_new_form
+msgid "List Commitment"
+msgstr "Cam kết"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_document_category__create_uid
+#: model:ir.model.fields,field_description:saas_documents.field_document_commitment_wizard__create_uid
+#: model:ir.model.fields,field_description:saas_documents.field_document_release_wizard__create_uid
+#: model:ir.model.fields,field_description:saas_documents.field_download_documents__create_uid
+msgid "Created by"
+msgstr "Người tạo"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_document_category__create_date
+#: model:ir.model.fields,field_description:saas_documents.field_document_commitment_wizard__create_date
+#: model:ir.model.fields,field_description:saas_documents.field_document_release_wizard__create_date
+#: model:ir.model.fields,field_description:saas_documents.field_download_documents__create_date
+msgid "Created on"
+msgstr "Tạo vào"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/s_document/wizard/document_release_wizard.py:0
+#, python-format
+msgid "Time must be greater than time today"
+msgstr "Thời gian phải lớn hơn thời gian hiện tại"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/s_document/wizard/document_release_wizard.py:0
+#, python-format
+msgid "Expiration date must be greater than or equal to today's date"
+msgstr "Ngày hết hiệu lực phải lớn hơn hoặc bằng với ngày hiện tại"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_view_kanban_inherit
+msgid ""
+"<br/>\n"
+"                        Release Date:"
+msgstr "Ngày hết hạn"
+
+#. module: saas_documents
+#: model:ir.actions.act_window,name:saas_documents.sdoc_tier_review_my_upload_action
+msgid "My Reviews Upload"
+msgstr "Danh sách phê duyệt upload của tôi"
+
+#. module: base_tier_validation_report
+#: model:ir.model.fields,field_description:base_tier_validation_report.field_tier_review__resource_ref
+#: model_terms:ir.ui.view,arch_db:base_tier_validation_report.tier_review_report_search
+msgid "Resource Ref"
+msgstr "Nguồn"
+
+#. module: base_tier_validation_report
+#: model_terms:ir.ui.view,arch_db:base_tier_validation_report.tier_review_report_search
+msgid "Requested By"
+msgstr "Người yêu cầu"
+
+#. module: base_tier_validation_report
+#: model:ir.model.fields,field_description:base_tier_validation_report.field_tier_review__next_review
+msgid "Next Review"
+msgstr "Yêu cầu tiếp theo"
+
+#. module: base_tier_validation_report
+#: model_terms:ir.ui.view,arch_db:base_tier_validation_report.tier_review_report_form
+#: model_terms:ir.ui.view,arch_db:base_tier_validation_report.tier_review_report_tree
+msgid "Open Resource"
+msgstr "Mở yêu cầu"
+
+#. module: base_tier_validation
+#. odoo-javascript
+#: code:addons/base_tier_validation/static/src/xml/tier_review_template.xml:0
+#: model:ir.model.fields,field_description:base_tier_validation.field_tier_review__status
+#, python-format
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_tier_review__is_emergency
+msgid "Is Emergency"
+msgstr "Khẩn cấp"
+
+#. module: documents
+#: model:ir.model.fields,field_description:documents.field_documents_folder__group_ids
+msgid "Write Groups"
+msgstr "Nhóm CRUD"
+
+#. module: documents
+#: model:ir.model.fields,field_description:documents.field_documents_folder__read_group_ids
+msgid "Read Groups"
+msgstr "Nhóm đọc"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_document_category__name
+#: model:ir.model.fields,field_description:saas_documents.field_download_documents__name
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_view_search_inherit
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_sdocument_document_view_new_form
+msgid "Name"
+msgstr "Tên "
+
+#. module: base_tier_validation
+#: model:ir.model.fields,field_description:base_tier_validation.field_tier_definition__reviewer_id
+#: model:ir.model.fields,field_description:base_tier_validation.field_tier_review__reviewer_id
+msgid "Reviewer"
+msgstr "Người phê duyệt"
+
+#. module: base_tier_validation_report
+#: model_terms:ir.ui.view,arch_db:base_tier_validation_report.tier_review_report_search
+msgid "Requested By"
+msgstr "Người yêu cầu"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/s_document/models/tier_definition.py:0
+#, python-format
+msgid "New Approval Request"
+msgstr "Yêu cầu phê duyệt mới"
+
+#. module: saas_documents
+#: model:ir.model,name:saas_documents.model_tier_definition
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__tier_definition_ids
+#: model:ir.model.fields,field_description:saas_documents.field_download_documents__tier_definition_ids
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_download_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_sdocument_document_view_new_form
+msgid "Tier Definition"
+msgstr "Tạo duyệt"
+
+#. module: base_tier_validation
+#. odoo-javascript
+#: code:addons/base_tier_validation/static/src/xml/tier_review_template.xml:0
+#, python-format
+msgid "Requested by"
+msgstr "Người yêu cầu"
+
+#. module: base_tier_validation
+#: model:ir.model.fields,field_description:base_tier_validation.field_tier_review__requested_by
+msgid "Requested By"
+msgstr "Người yêu cầu"
+
+#. module: base_tier_validation
+#. odoo-javascript
+#: code:addons/base_tier_validation/static/src/components/tier_review_widget/tier_review_widget.xml:0
+#: code:addons/s_custom_addons/base_tier_validation/static/src/components/tier_review_widget/tier_review_widget.xml:0
+#, python-format
+msgid "Todo by"
+msgstr "Được duyệt bởi"
+
+#. module: base_tier_validation
+#: model:ir.model.fields,field_description:base_tier_validation.field_tier_review__todo_by
+msgid "Todo By"
+msgstr "Được duyệt bởi"
+
+#. module: base_tier_validation
+#: model:ir.model.fields,field_description:base_tier_validation.field_tier_review__done_by
+msgid "Done By"
+msgstr "Người duyệt thực tế"
+
+#. module: base_tier_validation
+#. odoo-javascript
+#: code:addons/base_tier_validation/static/src/xml/tier_review_template.xml:0
+#, python-format
+msgid "Done by"
+msgstr "Người duyệt thực tế"
+
+#. module: base_tier_validation
+#. odoo-javascript
+#: code:addons/base_tier_validation/static/src/xml/tier_review_template.xml:0
+#: model:ir.model.fields,field_description:base_tier_validation.field_tier_review__reviewed_date
+#, python-format
+msgid "Validation Date"
+msgstr "Ngày duyệt"
+
+#. module: documents
+#: model:ir.model.fields,field_description:documents.field_documents_facet__sequence
+#: model:ir.model.fields,field_description:documents.field_documents_folder__sequence
+#: model:ir.model.fields,field_description:documents.field_documents_tag__sequence
+#: model:ir.model.fields,field_description:documents.field_documents_workflow_rule__sequence
+msgid "Sequence"
+msgstr "Bước duyệt"
+
+#. module: base_tier_validation_forward
+#: model:ir.model.fields,field_description:base_tier_validation_forward.field_tier_definition__has_forward
+msgid "Allow Forward"
+msgstr "Ủy quyền duyệt"
+
+#. module: base_tier_validation
+#: model_terms:ir.ui.view,arch_db:base_tier_validation.tier_validation_buttons
+msgid "Request Validation"
+msgstr "Gửi duyệt"
+
+#. module: base_tier_validation
+#: model_terms:ir.ui.view,arch_db:base_tier_validation.tier_validation_label
+msgid "Validate"
+msgstr "Duyệt"
+
+#. module: base_tier_validation
+#: model_terms:ir.ui.view,arch_db:base_tier_validation.tier_validation_label
+msgid "Reject"
+msgstr "Từ chối"
+
+#. module: base_tier_validation_forward
+#. odoo-python
+#: code:addons/base_tier_validation_forward/models/tier_validation.py:0
+#: model_terms:ir.ui.view,arch_db:base_tier_validation_forward.tier_validation_label_forward
+#: model_terms:ir.ui.view,arch_db:base_tier_validation_forward.view_forward_wizard
+#, python-format
+msgid "Forward"
+msgstr "Ủy quyền duyệt"
+
+#. module: base_tier_validation
+#. odoo-python
+#: code:addons/base_tier_validation/models/tier_validation.py:0
+#, python-format
+msgid "Next: %s"
+msgstr "Tiếp theo"
+
+#. module: base_tier_validation
+#. odoo-javascript
+#: code:addons/base_tier_validation/static/src/xml/systray.xml:0
+#: code:addons/base_tier_validation/static/src/xml/systray.xml:0
+#: code:addons/base_tier_validation/static/src/xml/tier_review_template.xml:0
+#: model:ir.model.fields,field_description:base_tier_validation.field_res_users__review_ids
+#, python-format
+msgid "Reviews"
+msgstr "Theo dõi phê duyệt"
+
+#. module: base_tier_validation_report
+#: model:ir.model.fields,field_description:base_tier_validation_report.field_tier_review__resource_name
+msgid "Resource Name"
+msgstr "Tên tài liệu"
+
+#. module: base_tier_validation_report
+#: model_terms:ir.ui.view,arch_db:base_tier_validation_report.tier_review_report_search
+msgid "To Review"
+msgstr "Phê duyệt của tôi"
+
+#. module: base_tier_validation
+#: model:ir.model.fields,field_description:base_tier_validation.field_tier_definition__model_id
+msgid "Referenced Model"
+msgstr "Phân hệ sử dụng"
+
+#. module: saas_documents
+#: model:ir.actions.act_window,name:saas_documents.action_download_documents
+#: model:ir.model,name:saas_documents.model_download_documents
+#: model:ir.ui.menu,name:saas_documents.download_documents
+msgid "Download Documents"
+msgstr ""
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__state
+#: model:ir.model.fields,field_description:saas_documents.field_download_documents__state
+msgid "State"
+msgstr "Trạng thái"
+
+#. module: base_tier_validation_forward
+#: model:ir.model.fields,field_description:base_tier_validation_forward.field_tier_review__review_type
+msgid "Validated by"
+msgstr "Được duyệt bởi"
+
+#. module: base_tier_validation
+#: model:ir.model.fields,field_description:base_tier_validation.field_tier_definition__review_type
+#: model:ir.model.fields,field_description:base_tier_validation.field_tier_review__review_type
+msgid "Validated by"
+msgstr "Được duyệt bởi"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_tier_definition__approve_sequence
+msgid "Approve by sequence"
+msgstr "Duyệt theo trình tự"
+
+#. module: base_tier_validation
+#: model:ir.model.fields,help:base_tier_validation.field_tier_definition__notify_on_create
+msgid ""
+"If set, all possible reviewers will be notified by email when this "
+"definition is triggered."
+msgstr "Nếu chọn, tất cả người duyệt được chỉ định sẽ nhận được thông báo khi có yêu cầu đã được gửi duyệt thành công"
+
+#. module: tier_validation
+#: model:ir.model.fields,help:tier_validation.field_tier_definition__notify_status_on_action
+msgid ""
+"If set, all previous reviewers will be notified by email whenever this "
+"definition is approve/reject."
+msgstr "Nếu chọn, tất cả những người duyệt trước sẽ nhận được thông báo khi yêu cầu được Duyệt hoặc Từ chối"
+
+#. module: tier_validation
+#: model:ir.model.fields,help:tier_validation.field_tier_definition__notify_status_on_next
+msgid ""
+"If set, next reviewer will be notified by email whenever this definition is "
+"about move to next person"
+msgstr ""
+
+#. module: base_tier_validation
+#: model:ir.model.fields,help:base_tier_validation.field_tier_definition__notify_on_accepted
+msgid ""
+"If set, reviewers will be notified by email when a review related to this "
+"definition is accepted."
+msgstr "Nếu chọn, người duyệt sẽ được nhận thông báo khi người duyệt khác cho ý kiến khi Duyệt"
+
+#. module: base_tier_validation
+#: model:ir.model.fields,help:base_tier_validation.field_tier_definition__notify_on_rejected
+msgid ""
+"If set, reviewers will be notified by email when a review related to this "
+"definition is rejected."
+msgstr "Nếu chọn, người duyệt sẽ được nhận thông báo khi người duyệt khác cho ý kiến khi Từ chối"
+
+#. module: base_tier_validation
+#: model:ir.model.fields,field_description:base_tier_validation.field_tier_definition__company_id
+#: model:ir.model.fields,field_description:base_tier_validation.field_tier_review__company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: tier_validation
+#: model:ir.model.fields,field_description:tier_validation.field_tier_definition__get_head_of_department
+msgid "Get Head of Department"
+msgstr "Trưởng SBU"
+
+#. module: tier_validation
+#: model:ir.model.fields,field_description:tier_validation.field_tier_definition__get_manager_of_department
+msgid "Get Manager Of Department"
+msgstr "Quản lý SBU"
+
+#. module: base_tier_validation_forward
+#: model:ir.model.fields,field_description:base_tier_validation_forward.field_tier_validation_forward_wizard__forward_reviewer_id
+msgid "Next Reviewer"
+msgstr "Người duyệt được ủy quyền"
+
+#. module: base_tier_validation_forward
+#: model:ir.model.fields,field_description:base_tier_validation_forward.field_tier_validation_forward_wizard__forward_description
+msgid "Forward Description"
+msgstr "Mô tả ủy quyền"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.res_config_settings_inherit_sdocument_view
+msgid "<span class=\"o_form_label\">End Date Document Alert</span>"
+msgstr "Thông báo hết hạn tài liệu"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.res_config_settings_inherit_sdocument_view
+msgid "<span>Send an alert</span>"
+msgstr "Thông báo"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.res_config_settings_inherit_sdocument_view
+msgid "<span>days before the end date</span>"
+msgstr " ngày trước khi hết hạn tài liệu"
+
+#. module: documents
+#: model_terms:ir.ui.view,arch_db:documents.res_config_settings_view_form
+msgid "Files Centralization"
+msgstr "Thông báo"
+
+#. module: documents
+#: model:ir.ui.menu,name:documents.my_documents_menu_root
+msgid "My request"
+msgstr "Yêu cầu của tôi"
+
+#. module: documents
+#: model:ir.ui.menu,name:documents.my_download_review_menu
+msgid "My Download Review"
+msgstr "Phê duyệt download của tôi"
+
+#. module: documents
+#: model:ir.ui.menu,name:documents.my_upload_review_menu
+msgid "My Upload Review"
+msgstr "Phê duyệt upload của tôi"
+
+#. module: saas_documents
+#: model:ir.actions.act_window,name:saas_documents.document_my_upload_act_window
+msgid "My Upload Request"
+msgstr "Danh sách yêu cầu upload của tôi"
+
+#. module: saas_documents
+#: model:ir.actions.act_window,name:saas_documents.document_my_download_act_window
+msgid "My Download"
+msgstr "Danh sách yêu cầu download của tôi"
+
+#. module: documents
+#. odoo-python
+#. odoo-javascript
+#: code:addons/documents/models/folder.py:0
+#: code:addons/documents/models/res_partner.py:0
+#: code:addons/documents/static/src/views/inspector/documents_inspector.xml:0
+#: model:ir.actions.act_window,name:documents.document_action
+#: model:ir.model.fields,field_description:documents.field_documents_folder__document_ids
+#: model:ir.model.fields,field_description:documents.field_documents_link_to_record_wizard__document_ids
+#: model:ir.model.fields,field_description:documents.field_res_users__document_count
+#: model:ir.module.category,name:documents.module_category_documents_management
+#: model:ir.ui.menu,name:documents.dashboard
+#: model:ir.ui.menu,name:documents.menu_root
+#: model_terms:ir.ui.view,arch_db:documents.action_view_search
+#: model_terms:ir.ui.view,arch_db:documents.document_view_search
+#: model_terms:ir.ui.view,arch_db:documents.res_config_settings_view_form
+#, python-format
+msgid "Documents"
+msgstr "Tài liệu"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_view_kanban_inherit
+msgid "Views"
+msgstr "Lượt xem"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_view_kanban_inherit
+msgid "Downloads"
+msgstr "Lượt tải"
+
+#. module: saas_documents
+#: model:ir.actions.act_window,name:saas_documents.sdoc_tier_review_my_download_action
+msgid "My Reviews Download"
+msgstr "Danh sách phê duyệt download của tôi"
+
+#. module: base_tier_validation
+#: model_terms:ir.ui.view,arch_db:base_tier_validation.view_comment_wizard
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: base_tier_validation
+#: model:ir.model.fields,field_description:base_tier_validation.field_tier_review__comment
+msgid "Comments"
+msgstr "Ý kiến"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_document_category__code
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__code_system
+#: model:ir.model.fields,field_description:saas_documents.field_download_documents__code_system
+#: model:ir.model.fields,field_description:saas_documents.field_tier_review__code_system
+msgid "Code"
+msgstr "Mã yêu cầu"
+
+#. module: base_tier_validation
+#: model:ir.model.fields,field_description:base_tier_validation.field_tier_definition__notify_reminder_delay
+msgid "Send reminder message on pending reviews"
+msgstr "Hạn duyệt yêu cầu"
+
+#. module: base_tier_validation
+#: model:ir.model.fields,help:base_tier_validation.field_tier_definition__notify_reminder_delay
+msgid ""
+"Number of days after which a message must be posted to remind about pending "
+"validation  (0 = no reminder)"
+msgstr "Số ngày sau đó một thông báo phải được đăng để nhắc nhở về việc đang chờ xác thực (0 = không có lời nhắc)"
+
+#. module: documents
+#: model:ir.model.fields,field_description:documents.field_documents_document__write_date
+#: model:ir.model.fields,field_description:documents.field_documents_facet__write_date
+#: model:ir.model.fields,field_description:documents.field_documents_folder__write_date
+#: model:ir.model.fields,field_description:documents.field_documents_folder_deletion_wizard__write_date
+#: model:ir.model.fields,field_description:documents.field_documents_link_to_record_wizard__write_date
+#: model:ir.model.fields,field_description:documents.field_documents_request_wizard__write_date
+#: model:ir.model.fields,field_description:documents.field_documents_share__write_date
+#: model:ir.model.fields,field_description:documents.field_documents_tag__write_date
+#: model:ir.model.fields,field_description:documents.field_documents_workflow_action__write_date
+#: model:ir.model.fields,field_description:documents.field_documents_workflow_rule__write_date
+msgid "Last Updated on"
+msgstr "Chỉnh sửa lần cuối vào"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_tier_review__approval_date
+msgid "Approval Date"
+msgstr "Hạn duyệt yêu cầu"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__custom_update_date
+#: model:ir.model.fields,field_description:saas_documents.field_tier_review__custom_update_date
+msgid "Last Edited"
+msgstr "Ngày chỉnh sửa gần nhất"
+
+#. module: base_tier_validation
+#: model:ir.model.fields.selection,name:base_tier_validation.selection__tier_review__status__approved
+msgid "Approved"
+msgstr "Xác nhận"
+
+#. module: base_tier_validation
+#. odoo-javascript
+#: code:addons/base_tier_validation/static/src/xml/systray.xml:0
+#: model:ir.model.fields.selection,name:base_tier_validation.selection__documents_document__validation_status__pending
+#: model:ir.model.fields.selection,name:base_tier_validation.selection__download_documents__validation_status__pending
+#: model:ir.model.fields.selection,name:base_tier_validation.selection__tier_review__status__pending
+#: model:ir.model.fields.selection,name:base_tier_validation.selection__tier_validation__validation_status__pending
+#, python-format
+msgid "Pending"
+msgstr "Chờ duyệt"
+
+
+#. module: saas_documents
+#. odoo-javascript
+#: code:addons/s_document/static/src/views/inspector/inherit_tier_review_template.xml:0
+#, python-format
+msgid "Reason for Approval/Denial"
+msgstr "Lý do phê duyệt/từ chối"
+
+#. module: saas_documents
+#. odoo-javascript
+#: code:addons/s_document/static/src/views/inspector/inherit_tier_review_template.xml:0
+#, python-format
+msgid "Approval name"
+msgstr "Tên bước duyệt"
+
+#. module: saas_documents
+#. odoo-javascript
+#: code:addons/s_document/static/src/views/inspector/inherit_tier_review_template.xml:0
+#, python-format
+msgid "Actual Approver"
+msgstr "Người duyệt thực tế"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_view_kanban_inherit
+msgid "Open"
+msgstr "Mở"
+
+#. module: web
+#. odoo-javascript
+#: code:addons/web/static/src/legacy/js/fields/basic_fields.js:0
+#: code:addons/web/static/src/views/fields/remaining_days/remaining_days_field.js:0
+#, python-format
+msgid "Expired yesterday"
+msgstr "Hôm qua"
+
+#. module: web
+#. odoo-javascript
+#: code:addons/web/static/src/legacy/js/fields/basic_fields.js:0
+#, python-format
+msgid "Expires today"
+msgstr "Hôm nay"
+
+#. module: web
+#. odoo-javascript
+#: code:addons/web/static/src/views/fields/remaining_days/remaining_days_field.js:0
+#, python-format
+msgid "Expires today"
+msgstr "Hôm nay"
+
+#. module: web
+#. odoo-javascript
+#: code:addons/web/static/src/legacy/js/fields/basic_fields.js:0
+#: code:addons/web/static/src/views/fields/remaining_days/remaining_days_field.js:0
+#, python-format
+msgid "Expires tomorrow"
+msgstr "Ngày mai"
+
+#. module: web
+#. odoo-javascript
+#: code:addons/web/static/src/legacy/js/fields/basic_fields.js:0
+#: code:addons/web/static/src/views/fields/remaining_days/remaining_days_field.js:0
+#, python-format
+msgid "Expired: %s days ago"
+msgstr "%s ngày trước"
+
+#. module: web
+#. odoo-javascript
+#: code:addons/web/static/src/legacy/js/fields/basic_fields.js:0
+#: code:addons/web/static/src/views/fields/remaining_days/remaining_days_field.js:0
+#, python-format
+msgid "%s days remaining"
+msgstr "%s ngày"
+
+#. module: web
+#. odoo-javascript
+#: code:addons/web/static/src/views/fields/remaining_days/remaining_days_field.js:0
+#, python-format
+msgid "In %s days"
+msgstr "Trong %s ngày"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/s_document/models/documents_document.py:0
+#, python-format
+msgid "The version must include both letters and numbers"
+msgstr "Phiên bản phải bao gồm cả chữ và số (Ví dụ: V01, V02, V03...)"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/s_document/models/documents_document.py:0
+#, python-format
+msgid "%s has already been defined in The Tier Definition.Please review!!"
+msgstr "%s đã được thêm là người phê duyệt trong bảng Tạo duyệt.Vui lòng xem lại"
+
+#. module: saas_documents
+#: model:ir.actions.act_window,name:saas_documents.document_category_act_window
+#: model:ir.model,name:saas_documents.model_document_category
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__document_type
+#: model:ir.model.fields,field_description:saas_documents.field_tier_review__document_type
+msgid "Document Category"
+msgstr "Loại tài liệu"
+
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/s_document/models/documents_document.py:0
+#, python-format
+msgid "The Document Category must include both letters and numbers"
+msgstr "Mã tài liệu phải bao gồm cả chữ và số (Ví dụ: PRL01, CON02...)"
+
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/s_document/models/documents_document.py:0
+#, python-format
+msgid "Upload request for This document version that already exists"
+msgstr "Yêu cầu upload cho version tài liệu đã có trên hệ thống"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/s_document/models/documents_document.py:0
+#, python-format
+msgid "Upload request for This document code that already exists"
+msgstr "Yêu cầu upload cho mã tài liệu tài liệu đã có trên hệ thống"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/s_document/models/documents_document.py:0
+#, python-format
+msgid ""
+"You are only allowed to check one option in the Approval Request step in The"
+" Tier Definition.Please review!!"
+msgstr "Bạn chỉ được tích chọn cho bước Duyệt yêu cầu.Vui lòng xem lại"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/s_document/models/documents_document.py:0
+#, python-format
+msgid ""
+"You need to check the Approve Request column in the  Approval Request step "
+"in The Tier Definition.Please review!!"
+msgstr "Bạn cần phải tích chọn vào cột duyệt yêu cầu vào bước duyệt yêu cầu tương ứng trong bảng Tạo duyệt.Vui lòng xem lại"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_view_kanban_inherit
+msgid "Release Date:"
+msgstr "Ngày ban hành"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_view_kanban_inherit
+msgid "Expiration date:"
+msgstr "Ngày hết hiệu lực:"
+
+#. module: base_tier_validation
+#. odoo-javascript
+#. odoo-python
+#: code:addons/base_tier_validation/models/tier_validation.py:0
+#: model:ir.model.fields,field_description:base_tier_validation.field_comment_wizard__comment
+#: model_terms:ir.ui.view,arch_db:base_tier_validation.view_comment_wizard
+#, python-format
+msgid "Reason for Approval/Denial"
+msgstr "Lý do phê duyệt/từ chối"
+
+#. module: saas_documents
+#: model:ir.model,name:saas_documents.model_documents_document
+#: model:ir.model.fields,field_description:saas_documents.field_document_commitment_wizard__document_id
+#: model:ir.model.fields,field_description:saas_documents.field_tier_definition__document_id
+msgid "Document"
+msgstr "Tài liệu"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_download_documents__document_id
+msgid "Document Detail"
+msgstr "Tên chi tiết tài liệu"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/s_document/models/tier_validation.py:0
+#, python-format
+msgid "Approval Forward"
+msgstr "Ủy quyền phê duyệt"
+
+
+#. module: base_tier_validation_forward
+#: model_terms:ir.ui.view,arch_db:base_tier_validation_forward.view_forward_wizard
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: documents
+#: model:ir.ui.menu,name:documents.folder_menu
+msgid "Workspaces"
+msgstr "Không gian làm việc"
+
+#. module: documents
+#: model:ir.ui.menu,name:documents.type_category_menu
+msgid "Document Category"
+msgstr "Loại tài liệu"
+
+#. module: saas_documents
+#: model:ir.actions.act_window,name:saas_documents.action_download_documents
+#: model:ir.model,name:saas_documents.model_download_documents
+#: model:ir.ui.menu,name:saas_documents.download_documents
+msgid "Download Documents"
+msgstr "Tài liệu tải xuống"
+
+#. module: documents
+#: model:ir.model.fields,field_description:documents.field_documents_document__create_uid
+#: model:ir.model.fields,field_description:documents.field_documents_facet__create_uid
+#: model:ir.model.fields,field_description:documents.field_documents_folder__create_uid
+#: model:ir.model.fields,field_description:documents.field_documents_folder_deletion_wizard__create_uid
+#: model:ir.model.fields,field_description:documents.field_documents_link_to_record_wizard__create_uid
+#: model:ir.model.fields,field_description:documents.field_documents_request_wizard__create_uid
+#: model:ir.model.fields,field_description:documents.field_documents_share__create_uid
+#: model:ir.model.fields,field_description:documents.field_documents_tag__create_uid
+#: model:ir.model.fields,field_description:documents.field_documents_workflow_action__create_uid
+#: model:ir.model.fields,field_description:documents.field_documents_workflow_rule__create_uid
+#: model_terms:ir.ui.view,arch_db:documents.document_view_search
+msgid "Created by"
+msgstr "Người tạo"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/s_document/models/documents_document.py:0
+#, python-format
+msgid "Please select the SBU that matches the chosen company"
+msgstr "Vui lòng chọn SBU trùng với công ty đã chọn"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_folder__user_specific
+msgid "Own Documents Only"
+msgstr "Chỉ nhóm được cho phép đọc"
+
+#. module: documents
+#: model:ir.model.fields,field_description:documents.field_documents_folder__user_specific_write
+#: model_terms:ir.ui.view,arch_db:documents.folder_view_form
+msgid "Own Documents Only"
+msgstr "Chỉ nhóm được cho phép"
+
+#. module: documents
+#: model:ir.model.fields,field_description:documents.field_documents_folder__parent_folder_id
+#: model_terms:ir.ui.view,arch_db:documents.folder_view_search
+msgid "Parent Workspace"
+msgstr "Không gian làm việc cha"
+
+#. module: documents
+#: model:ir.actions.act_window,name:documents.folder_action
+#: model:ir.ui.menu,name:documents.folder_menu
+msgid "Workspaces"
+msgstr "Không gian làm việc"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_document_category__description
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_tier_definition__approve_request
+msgid "Approve Request"
+msgstr "Duyệt yêu cầu tải lên/tải xuống"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.res_config_settings_inherit_sdocument_view
+msgid "End Date Document Alert"
+msgstr "Thông báo hết hạn tài liệu"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.res_config_settings_inherit_sdocument_view
+msgid "Send an alert"
+msgstr "Thông báo"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.res_config_settings_inherit_sdocument_view
+msgid "before the end date"
+msgstr " ngày trước khi hết hạn tài liệu"
+
+#. module: saas_documents
+#. odoo-javascript
+#: code:addons/s_document/static/src/views/inspector/inherit_activity_menu.xml:0
+#, python-format
+msgid "Expiring soon"
+msgstr "Sắp hết hạn"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/s_document/models/documents_document.py:0
+#, python-format
+msgid ""
+"Upload request for This document version and document code that already "
+"exists"
+msgstr "Mã tài liệu và phiên bản đã tồn tại"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/s_document/models/hr_employee.py:0
+#, python-format
+msgid "The company has a SBU manager %s. Please review!!"
+msgstr "Công ty đã có trưởng SBU %s.Vui lòng xem lại!!"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_document_category__description
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_view_search_inherit
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_sdocument_document_view_new_form
+msgid "Archived"
+msgstr "Lưu trữ"
+
+#. module: documents
+#: model:ir.model.fields,field_description:documents.field_documents_facet__tooltip
+#: model:ir.model.fields,field_description:documents.field_documents_workflow_rule__note
+#: model_terms:ir.ui.view,arch_db:documents.facet_view_form
+msgid "Tooltip"
+msgstr "Mô tả"
+
+#. module: base_tier_validation
+#. odoo-python
+#: code:addons/base_tier_validation/models/tier_validation.py:0
+#, python-format
+msgid "The operation is under validation."
+msgstr "Đang trong quá trình phê duyệt."
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/s_document/models/tier_definition.py:0
+#, python-format
+msgid "Notify remender delay greater than 0"
+msgstr "Ngày duyệt phải lớn hơn 0"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_view_kanban_inherit
+msgid "Expired:"
+msgstr "Hết hiệu lực trong:"
+
+#. module: base_tier_validation
+#. odoo-javascript
+#: code:addons/base_tier_validation/static/src/components/tier_review_widget/tier_review_widget.xml:0
+#: model:ir.model.fields,field_description:base_tier_validation.field_tier_definition__name
+#: model:ir.model.fields,field_description:base_tier_validation.field_tier_review__name
+#, python-format
+msgid "Description"
+msgstr "Tên bước duyệt"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__issuing_sbu
+#: model:ir.model.fields,field_description:saas_documents.field_tier_review__issuing_sbu
+#: model_terms:ir.ui.view,arch_db:saas_documents.view_document_tree_new
+msgid "SBU Issuing"
+msgstr "SBU ban hành"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/s_document/models/download_documents.py:0
+#, python-format
+msgid "You cannot delete download that are not in draft state"
+msgstr "Bạn chỉ có thể xóa tài liệu khi ở trang thái nháp"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_view_kanban_inherit
+msgid "Status:"
+msgstr "Tình trạng"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_review_update_view
+msgid "Complete Name"
+msgstr "Tên chi tiết tài liệu"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__file_content
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_view_search_inherit
+msgid "File Content"
+msgstr "Nội dung tài liệu"
+
+#. module: queue_job
+#: model:ir.module.category,name:queue_job.module_category_queue_job
+#: model:ir.ui.menu,name:queue_job.menu_queue_job_root
+msgid "Job Queue"
+msgstr "Hàng đợi công việc"
+
+#. module: queue_job
+#: model:ir.actions.act_window,name:queue_job.action_queue_job
+#: model:ir.model.fields,field_description:queue_job.field_queue_jobs_to_cancelled__job_ids
+#: model:ir.model.fields,field_description:queue_job.field_queue_jobs_to_done__job_ids
+#: model:ir.model.fields,field_description:queue_job.field_queue_requeue_job__job_ids
+#: model:ir.ui.menu,name:queue_job.menu_queue_job
+#: model_terms:ir.ui.view,arch_db:queue_job.view_queue_job_form
+#: model_terms:ir.ui.view,arch_db:queue_job.view_queue_job_graph
+#: model_terms:ir.ui.view,arch_db:queue_job.view_queue_job_pivot
+#: model_terms:ir.ui.view,arch_db:queue_job.view_queue_job_search
+msgid "Jobs"
+msgstr "Công việc"
+
+#. module: queue_job
+#: model:ir.ui.menu,name:queue_job.menu_queue
+msgid "Queue"
+msgstr "Hàng đợi"
+
+#. module: queue_job
+#: model:ir.actions.act_window,name:queue_job.action_queue_job_channel
+#: model:ir.ui.menu,name:queue_job.menu_queue_job_channel
+#: model_terms:ir.ui.view,arch_db:queue_job.view_queue_job_channel_form
+#: model_terms:ir.ui.view,arch_db:queue_job.view_queue_job_channel_search
+msgid "Channels"
+msgstr "Kênh"
+
+#. module: queue_job
+#: model:ir.actions.act_window,name:queue_job.action_queue_job_function
+#: model:ir.model,name:queue_job.model_queue_job_function
+#: model:ir.model.fields,field_description:queue_job.field_queue_job_channel__job_function_ids
+#: model:ir.ui.menu,name:queue_job.menu_queue_job_function
+#: model_terms:ir.ui.view,arch_db:queue_job.view_queue_job_function_form
+#: model_terms:ir.ui.view,arch_db:queue_job.view_queue_job_function_search
+msgid "Job Functions"
+msgstr "Chức năng công việc"
+
+#. module: queue_job
+#: model:ir.model.fields,field_description:queue_job.field_queue_job__name
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: queue_job
+#: model:ir.model.fields,field_description:queue_job.field_queue_job__model_name
+#: model:ir.model.fields,field_description:queue_job.field_queue_job_function__model_id
+#: model_terms:ir.ui.view,arch_db:queue_job.view_queue_job_search
+msgid "Model"
+msgstr "Mô hình"
+
+#. module: queue_job
+#: model:ir.model.fields,field_description:queue_job.field_queue_job__state
+#: model_terms:ir.ui.view,arch_db:queue_job.view_queue_job_search
+msgid "State"
+msgstr "Trạng thái"
+
+#. module: queue_job
+#: model:ir.model.fields,field_description:queue_job.field_queue_job__date_created
+msgid "Created Date"
+msgstr "Ngày tạo"
+
+#. module: queue_job
+#: model:ir.model.fields,field_description:queue_job.field_queue_job__date_done
+msgid "Date Done"
+msgstr "Ngày hoàn thành"
+
+#. module: queue_job
+#: model:ir.model.fields,field_description:queue_job.field_queue_job__exec_time
+msgid "Execution Time (avg)"
+msgstr "Thời gian thực hiện (trung bình)"
+
+#. module: queue_job
+#: model:ir.model.fields,field_description:queue_job.field_queue_job__exc_name
+#: model_terms:ir.ui.view,arch_db:queue_job.view_queue_job_search
+msgid "Exception"
+msgstr "Ngoại lệ"
+
+#. module: queue_job
+#: model:ir.model.fields,field_description:queue_job.field_queue_job__exc_message
+msgid "Exception Message"
+msgstr "Thông báo ngoại lệ"
+
+#. module: queue_job
+#: model_terms:ir.ui.view,arch_db:queue_job.view_queue_job_search
+msgid "Exception message"
+msgstr "Thông báo ngoại lệ"
+
+#. module: queue_job
+#: model:ir.model.fields,field_description:queue_job.field_queue_job__channel
+#: model:ir.model.fields,field_description:queue_job.field_queue_job_function__channel_id
+#: model_terms:ir.ui.view,arch_db:queue_job.view_queue_job_function_search
+#: model_terms:ir.ui.view,arch_db:queue_job.view_queue_job_search
+msgid "Channel"
+msgstr "Kênh"
+
+#. module: queue_job
+#: model_terms:ir.ui.view,arch_db:queue_job.view_queue_job_tree
+msgid "Remaining days to execute"
+msgstr "Số ngày còn lại để thực hiện"
+
+#. module: queue_job
+#: model:ir.model.fields,field_description:queue_job.field_queue_job_channel__complete_name
+#: model:ir.model.fields,field_description:queue_job.field_queue_job_function__channel
+msgid "Complete Name"
+msgstr "Tên"
+
+#. module: queue_job
+#: model:ir.model.fields,field_description:queue_job.field_queue_job_channel__name
+#: model:ir.model.fields,field_description:queue_job.field_queue_job_function__name
+msgid "Name"
+msgstr "Tên"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_dropbox_credentials__name
+msgid "Account Name"
+msgstr "Tên tài khoản"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_dropbox_credentials__access_token
+msgid "Access Token"
+msgstr "Mã truy cập"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_dropbox_credentials__folder_path
+msgid "Folder Path"
+msgstr "Đường dẫn thư mục"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_dropbox_credentials__current_account
+msgid "Active?"
+msgstr "Kích hoạt?"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__link_url
+#: model:ir.model.fields,field_description:saas_documents.field_dropbox_credentials__link_url
+msgid "Link Url"
+msgstr "Đường dẫn liên kết"
+
+#. module: saas_documents
+#: model:ir.actions.act_window,name:saas_documents.dropbox_credentials_action_window
+#: model:ir.model,name:saas_documents.model_dropbox_credentials
+#: model_terms:ir.ui.view,arch_db:saas_documents.dropbox_credentials_form
+msgid "Dropbox Credentials"
+msgstr "Thông tin xác thực Dropbox"
+
+#. module: saas_documents
+#: model:ir.ui.menu,name:saas_documents.dropbox_credentials_menu
+msgid "Credentials"
+msgstr "Cấu hình Dropbox"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.res_config_settings_inherit_sdocument_view
+msgid "Configure to search by file contents"
+msgstr "Cấu hình để tìm kiếm theo nội dung tập tin"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.res_config_settings_inherit_sdocument_view
+msgid "Configuration to upload files to dropbox"
+msgstr "Cấu hình để tải tệp lên Dropbox"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_res_config_settings__is_file_content
+msgid "Search File Content"
+msgstr "Tìm kiếm nội dung tập tin"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_res_config_settings__is_upload_dropbox
+msgid "Upload Dropbox"
+msgstr "Tải lên Dropbox"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_dropbox_credentials__refresh_token
+msgid "Refresh Token"
+msgstr "Mã làm mới"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_dropbox_credentials__expires_at
+#: model_terms:ir.ui.view,arch_db:saas_documents.dropbox_credentials_form
+msgid "Expires At"
+msgstr "Hết hạn vào"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.dropbox_credentials_form
+msgid "<span class=\"ms-3\">Hours</span>"
+msgstr "Giờ"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_dropbox_credentials__authorization_code
+msgid "Authorization Code"
+msgstr "Mã ủy quyền"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.dropbox_credentials_form
+msgid "Check Code Dropbox"
+msgstr "Lấy mã Dropbox"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.dropbox_credentials_form
+msgid "Refresh Code Dropbox"
+msgstr "Làm mới mã token Dropbox"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_dropbox_credentials__dropbox_data_limit_mb
+msgid "Data Limit (MB)"
+msgstr "Giới hạn dữ liệu (MB)"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/saas_documents/models/credentials.py:0
+#, python-format
+msgid "Dropbox account information not found"
+msgstr "Không tìm thấy thông tin tài khoản Dropbox"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/saas_documents/models/docuements_share.py:0
+#, python-format
+msgid "unnamed link"
+msgstr "Liên kết chưa đặt tên"
+
+#. module: documents_fleet
+#: model_terms:ir.ui.view,arch_db:documents_fleet.res_config_settings_view_form_inherit_documents_fleet
+msgid "Centralize your Fleet' documents (fines, etc.)"
+msgstr "Tập trung tài liệu của đội xe của bạn (biên bản phạt, v.v.)"
+
+#. module: documents_hr_recruitment
+#: model_terms:ir.ui.view,arch_db:documents_hr_recruitment.res_config_settings_view_form
+msgid "Centralize files attached to applications and job positions"
+msgstr "Tập trung hóa các tệp đính kèm vào đơn ứng tuyển và vị trí công việc"
+
+#. module: documents
+#: model_terms:documents.folder,description:documents.documents_internal_folder
+msgid "Categorize, share and keep track of all your internal documents."
+msgstr "Phân loại, chia sẻ và theo dõi tất cả tài liệu nội bộ của bạn."
+
+#. module: saas_documents
+#. odoo-javascript
+#: code:addons/saas_documents/static/src/views/inspector/documents_controller_mixin.xml:0
+#, python-format
+msgid "Add A Link"
+msgstr "Thêm một liên kết"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.documents_workflow_rule_form_inherit
+msgid "Write a tooltip for the action here"
+msgstr "Viết chú giải công cụ cho hành động tại đây"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_onlyoffice_permission__name
+msgid "Permission Name"
+msgstr "Tên quyền"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_onlyoffice_permission__code
+msgid "Permission Code"
+msgstr "Mã quyền"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_onlyoffice_permission__description
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_share_access__user_id
+msgid "User"
+msgstr "Người dùng"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__onlyoffice_permission_ids
+#: model:ir.model.fields,field_description:saas_documents.field_documents_share_access__onlyoffice_permission_ids
+msgid "Permission"
+msgstr "Quyền"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/saas_documents/models/documents_document.py:0
+#, python-format
+msgid "Share Document"
+msgstr "Chia sẻ tài liệu"
+
+#. module: saas_documents
+#: model:ir.actions.act_window,name:saas_documents.onlyoffice_permission_action
+#: model:ir.model,name:saas_documents.model_onlyoffice_permission
+#: model:ir.ui.menu,name:saas_documents.onlyoffice_permission_menu
+msgid "Onlyoffice Permission"
+msgstr "Quyền Onlyoffice"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__document_share_access_ids
+#: model_terms:ir.ui.view,arch_db:saas_documents.document_view_form_inherit
+msgid "Document Share Access"
+msgstr "Chia sẻ quyền cho tài liệu"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/saas_documents/controllers/controllers.py:0
+#, python-format
+msgid "You do not have permission to access this document. Please review!!"
+msgstr "Bạn không có quyền truy cập tài liệu này. Vui lòng xem lại!!"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/saas_documents/models/documents_document.py:0
+#, python-format
+msgid "%s selected. Please review!!"
+msgstr "%s đã được chọn. Vui lòng xem lại!!"
+
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__global_permission
+msgid "Global Permission"
+msgstr "Quyền cho tất cả mọi người"
+
+#. module: saas_documents
+#. odoo-javascript
+#: code:addons/saas-dms/saas_documents/static/src/views/documents_view/documents_activity_controller.js:0
+#: code:addons/saas-dms/saas_documents/static/src/views/documents_view/documents_kanban_controller.js:0
+#: code:addons/saas-dms/saas_documents/static/src/views/documents_view/documents_list_controller.js:0
+#: code:addons/saas_documents/static/src/views/documents_view/documents_activity_controller.js:0
+#: code:addons/saas_documents/static/src/views/documents_view/documents_kanban_controller.js:0
+#: code:addons/saas_documents/static/src/views/documents_view/documents_list_controller.js:0
+#, python-format
+msgid "Open with SoOn Spreadsheet"
+msgstr "Mở với SoOn bảng tính"
+
+#. module: saas_documents
+#. odoo-javascript
+#: code:addons/saas-dms/saas_documents/static/src/views/inspector/spreadsheet_clone_xlsx_dialog.xml:0
+#: code:addons/saas_documents/static/src/views/inspector/spreadsheet_clone_xlsx_dialog.xml:0
+#, python-format
+msgid ""
+"Spreadsheet files cannot be previewed or edited in SoOn. Opening your file "
+"with SoOn Spreadsheet will allow you to do so."
+msgstr ""
+"Không thể xem trước hoặc chỉnh sửa tệp bảng tính trong SoOn. Hãy mở tệp bằng"
+" SoOn bảng tính để tiếp tục."
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__error_description_push
+msgid "Error Description Push"
+msgstr "Mô tả lỗi khi đẩy"
+
+#. module: saas_documents
+#: model:ir.model.fields,field_description:saas_documents.field_documents_document__error_description_read
+msgid "Error Description Read"
+msgstr "Mô tả lỗi khi đọc"
+
+#. module: saas_documents
+#. odoo-javascript
+#: code:addons/saas_documents/static/src/views/inspector/documents_inspector.xml:0
+#, python-format
+msgid "Share This Selection"
+msgstr "Chia sẻ lựa chọn này"
+
+#. module: saas_documents
+#. odoo-javascript
+#: code:addons/saas-dms/saas_documents/static/src/views/create_button/button_create_document.js:0
+#: code:addons/saas-dms/saas_documents/static/src/views/create_button/button_create_document.xml:0
+#: code:addons/saas_documents/static/src/views/create_button/button_create_document.js:0
+#: code:addons/saas_documents/static/src/views/create_button/button_create_document.xml:0
+#, python-format
+msgid "Create Document"
+msgstr "Tạo Tài liệu"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.documents_create_view_form
+msgid "Create"
+msgstr "Tạo"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.documents_create_view_form
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/saas-dms/saas_documents/models/document_create.py:0
+#: code:addons/saas_documents/models/document_create.py:0
+#: model:ir.model.fields,field_description:saas_documents.field_documents_create__name
+#, python-format
+msgid "Name"
+msgstr "Tên"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/saas-dms/saas_documents/models/document_create.py:0
+#: code:addons/saas_documents/models/document_create.py:0
+#: model:ir.model.fields,field_description:saas_documents.field_documents_create__type
+#, python-format
+msgid "Type"
+msgstr "Loại"
+
+#. module: saas_documents
+#. odoo-python
+#: code:addons/saas-dms/saas_documents/models/document_create.py:0
+#: code:addons/saas_documents/models/document_create.py:0
+#: model:ir.model.fields,field_description:saas_documents.field_documents_create__folder_id
+#, python-format
+msgid "Workspace"
+msgstr "Không gian làm việc"
+
+#. module: saas_documents
+#: model_terms:ir.ui.view,arch_db:saas_documents.documents_create_view_form
+msgid "e.g. DCD Document"
+msgstr "Ví dụ: Tài liệu DCD"

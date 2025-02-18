@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="s_doc_tier_review_menu_inherit" t-inherit="base_tier_validation.TierReviewMenu"
+       t-inherit-mode="extension">
+        <xpath expr="//div[@class='d-flex px-2']" position="attributes">
+            <attribute name="class">d-flex px-2 d-none</attribute>
+        </xpath>
+        <xpath expr="//div[@name='activityTitle']" position="after">
+            <div
+                    class="d-flex px-2"
+                    name="activityTitle"
+
+            >
+                <t t-if="group.model == 'documents.document'">
+                    Danh sách phê duyệt upload của tôi
+                </t>
+                <t t-if="group.model == 'download.documents'">
+                    Danh sách phê duyệt download của tôi
+                </t>
+            </div>
+        </xpath>
+    </t>
+</templates>

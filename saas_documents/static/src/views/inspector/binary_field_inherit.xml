@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+    <t t-name="web.BinaryField.inherit" t-inherit="web.BinaryField" t-inherit-mode="extension">
+        <xpath expr="//t[@t-if='props.record.resId and !props.record.dirty']" position="after">
+            <t t-else="">
+                <button t-if="props.record.resId and !props.record.dirty and props.record.data.is_downloadable and props.record.data.res_model == 'documents.document'"
+                        class="btn btn-secondary fa fa-download" data-tooltip="Download" aria-label="Download"
+                        t-on-click="onFileDownload"/>
+            </t>
+        </xpath>
+        <xpath expr="//t[@t-if='props.record.resId and !props.record.dirty']" position="attributes">
+            <attribute name="t-if" add=" and props.record.data.res_model != 'documents.document'" separator=" "/>
+        </xpath>
+        <xpath expr="//t[@t-elif='props.record.resId and props.record.data[props.name]']" position="after">
+            <t t-else="">
+                <a t-if="props.record.resId and props.record.data[props.name] and props.record.data.is_downloadable and props.record.data.res_model == 'documents.document'"
+                   class="o_form_uri" href="#" t-on-click.prevent="onFileDownload">
+                    <span class="fa fa-download me-2"/>
+                    <t t-if="fileName" t-esc="fileName"/>
+                </a>
+            </t>
+        </xpath>
+        <xpath expr="//t[@t-elif='props.record.resId and props.record.data[props.name]']" position="attributes">
+            <attribute name="t-elif" add=" and props.record.data.res_model != 'documents.document'" separator=" "/>
+        </xpath>
+    </t>
+</templates>

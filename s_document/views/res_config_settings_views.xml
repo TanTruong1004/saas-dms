@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="res_config_settings_inherit_sdocument_view" model="ir.ui.view">
+        <field name="name">res.config.settings.inherit.sdocument.view</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id"
+               ref="documents.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='deletion_delay']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+             <xpath expr="//setting[@id='deletion_delay']" position="inside">
+                            <div class="content-group">
+                                <div class="small">
+                                    Send an alert <field name="remaining_days" class="w-25"/> before the end date
+                                </div>
+                            </div>
+            </xpath>
+
+            <xpath expr="//setting[@id='deletion_delay']" position="attributes">
+                <attribute name="string">End Date Document Alert</attribute>
+                <attribute name="help"/>
+            </xpath>
+        </field>
+    </record>
+
+       <record id="res_config_settings_inherit_sdocument_view_spreadsheet" model="ir.ui.view">
+        <field name="name">res.config.settings.inherit.sdocument.view.spreadsheet</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id"
+               ref="documents_spreadsheet.res_config_settings_view_form_inherit_documents_spreadsheet"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='documents_spreadsheet_folder']" position="attributes">
+                <attribute name="class">d-none</attribute>
+            </xpath>
+            <xpath expr="//field[@name='documents_spreadsheet_folder_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//div[@name='documents_spreadsheet_folder']/ancestor::setting[1]" position="attributes">
+                <attribute name="string"/>
+                <attribute name="help"/>
+            </xpath>
+        </field>
+       </record>
+
+        <record id="res_config_settings_inherit_sdocument_view_product" model="ir.ui.view">
+            <field name="name">res.config.settings.inherit.sdocument.view.product</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id"
+                   ref="documents_product.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='documents_product_settings']" position="attributes">
+                    <attribute name="class">d-none</attribute>
+                </xpath>
+                <xpath expr="//div[@class='content-group']" position="attributes">
+                    <attribute name="class">d-none</attribute>
+                </xpath>
+                <xpath expr="//field[@name='documents_product_settings']/ancestor::setting[1]" position="attributes">
+                    <attribute name="help"/>
+                    <attribute name="string"> </attribute>
+                    <attribute name="company_dependent"/>
+                </xpath>
+            </field>
+       </record>
+</odoo>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_inherit_tier_review_report_tree" model="ir.ui.view">
+        <field name="name">tier.review.report.tree.inherited</field>
+        <field name="model">tier.review</field>
+        <field name="inherit_id" ref="base_tier_validation_report.tier_review_report_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="decoration-danger">status == 'pending' and check_request_approval_date</attribute>
+            </xpath>
+            <xpath expr="//field[@name='resource_type']" position="attributes">
+                <attribute name="column_invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='resource_name']" position="attributes">
+                <attribute name="column_invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='status']" position="attributes">
+                <attribute name="column_invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='next_review']" position="attributes">
+                <attribute name="column_invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='next_review']" position="after">
+                <field name="approval_date"/>
+                <field name="status"/>
+                <field name="next_review"/>
+            </xpath>
+            <xpath expr="//field[@name='next_review']" position="after">
+                <field name="check_request_approval_date" column_invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="sdoc_inherit_tier_review_report" model="ir.ui.view">
+        <field name="name">sdoc.inherit.tier.review.report</field>
+        <field name="model">tier.review</field>
+        <field name="inherit_id" ref="base_tier_validation_report.tier_review_report_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='reviewed_date']" position="attributes">
+                widget="datetime" options="{'show_time': false}"
+                <attribute name="widget">datetime</attribute>
+                <attribute name="options">{'show_time': false}</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="sdoc_view_inherit_tier_review_report_tree_search" model="ir.ui.view">
+        <field name="name">sdoc.tier.review.report.tree.inherited.search</field>
+        <field name="model">tier.review</field>
+        <field name="inherit_id" ref="base_tier_validation_report.tier_review_report_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='resource_ref']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='requested_by']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='reviewer_ids']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='done_by']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//search" position="inside">
+                <field name="completed_name"/>
+                <field name="code_system"/>
+                <field name="issuing_authority"/>
+                <field name="document_type"/>
+                <field name="document_code"/>
+                <field name="version"/>
+                <field name="requested_by"/>
+                <field name="todo_by"/>
+                <field name="next_review"/>
+                <filter string="Forwarded" name="forwarded" domain="[('status', '=', 'forwarded')]"/>
+                <filter string="Release Date" name="release_date" domain="[]" date="release_date"/>
+                <filter string="Expiration Date" name="expiration_date" domain="[]" date="expiration_date"/>
+                <filter string="Update Date" name="custom_update_date" domain="[]" date="custom_update_date"/>
+                <filter string="Approval Date" name="approval_date" domain="[]" date="approval_date"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

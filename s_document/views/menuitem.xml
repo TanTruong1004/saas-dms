@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem name="My request" id="documents.my_documents_menu_root" parent="documents.menu_root"
+                  sequence="0"/>
+
+        <menuitem name="My Download Request" id="documents.my_download_menu" parent="documents.my_documents_menu_root"
+               action="document_my_download_act_window" sequence="2"/>
+
+        <menuitem name="My Upload Request" id="documents.my_upload_menu" parent="documents.my_documents_menu_root"
+                  action="document_my_upload_act_window" sequence="1"/>
+
+        <menuitem name="My Review" id="documents.my_documents_review_menu_root" parent="documents.menu_root"
+                  sequence="0"/>
+
+        <menuitem name="My Upload Review" id="documents.my_upload_review_menu" parent="documents.my_documents_review_menu_root"
+               action="sdoc_tier_review_my_upload_action" sequence="1"/>
+
+        <menuitem name="My Download Review" id="documents.my_download_review_menu" parent="documents.my_documents_review_menu_root"
+               action="sdoc_tier_review_my_download_action" sequence="2"/>
+
+        <menuitem name="Document Category" id="documents.type_category_menu" parent="documents.Config"
+                  action="document_category_act_window" sequence="1"/>
+
+        <menuitem
+                id="base_tier_validation_report.menu_tier_validation_report"
+                name="Reviews"
+                parent="spreadsheet_dashboard.spreadsheet_dashboard_menu_root"
+                sequence="3"
+        />
+        <menuitem
+                id="base_tier_validation_report.menu_tier_review_report_my"
+                parent="base_tier_validation_report.menu_tier_validation_report"
+                action="base_tier_validation_report.tier_review_my_action"
+                sequence="10"
+        />
+        <menuitem
+                id="base_tier_validation_report.menu_tier_review_report_all"
+                parent="base_tier_validation_report.menu_tier_validation_report"
+                action="base_tier_validation_report.tier_review_all_action"
+                sequence="20"
+                groups="base_tier_validation_report.group_see_all_reviews"
+        />
+        <menuitem name="Download Documents"
+                  id="download_documents"
+                  parent="documents.Config"
+                  action="action_download_documents"
+                  sequence="6"/>
+
+        <menuitem name="Settings" id="documents.settings_menu" parent="documents.Config" action="documents.configuration_action"
+                  groups="documents.group_documents_manager,base.group_system" sequence="0"/>
+
+    </data>
+</odoo>

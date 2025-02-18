@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_download_documents_tree">
+            <field name="name">Download Documents Tree</field>
+            <field name="model">download.documents</field>
+            <field name="arch" type="xml">
+                <tree create="false" edit="false" default_order="is_emergency desc, create_date desc" class="custome_size_tier_defi">
+                    <field name="document_id"/>
+                    <field name="create_uid"/>
+                    <field name="date_request" widget="date"/>
+                    <field name="is_emergency"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_download_documents" model="ir.ui.view">
+            <field name="name">Download Documents Form</field>
+            <field name="model">download.documents</field>
+            <field name="arch" type="xml">
+                <form duplicate="false" class = 'custom_download_view'>
+                    <header>
+                        <field name="create_uid" invisible="1"/>
+                        <button string="demo" invisible="1"/>
+                        <button name="action_download" string="Download" type="object"
+                                invisible="create_uid != uid or (state != 'confirmed' and request_approve)"/>
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="draft,in_progress,confirmed,rejected"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="document_id" readonly="1"
+                                       options="{'no_create': True, 'no_create_edit': True}" context="{'form_view_ref': 's_document.view_sdocument_document_view_new_form'}"/>
+                                <field name="issuing_authority" readonly="1"
+                                       options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                                <field name="document_type" readonly="1" force_save="1"
+                                       options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                                <field name="document_code" readonly="1"/>
+                                <field name="last_edit_date" readonly="1" widget="date"/>
+                                <field name="version" readonly="1"/>
+                                <field name="release_date" readonly="1" widget="date"/>
+                                <field name="expiration_date" readonly="1" widget="date"/>
+                            </group>
+                            <group>
+
+                                <field name="user_request_id" readonly="1"
+                                       options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"
+                                />
+                                <field name="tag_ids" widget="many2many_tags" readonly="1"/>
+                                <field name="date_request" readonly="1" widget="date"/>
+                                <field name="is_emergency"/>
+                                <field name="reason_request" required="1"/>
+                                <field name="request_approve" invisible="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Tier Definition">
+                                <field name="tier_definition_ids">
+                                    <tree string="tier_definition_ids" create="false" delete="false" editable="bottom" class="custome_size_tier_defi" >
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="name" force_save="1" readonly="1"/>
+                                        <field name="model_id" force_save="1" column_invisible="1"/>
+                                        <field name="company_id" force_save="1" column_invisible="1"/>
+                                        <field name="review_type" force_save="1" column_invisible="1"/>
+                                        <field name="reviewer_id" required="1" readonly="1" force_save="1"/>
+                                        <field name="definition_type" force_save="1" column_invisible="1"/>
+                                        <field name="definition_domain" force_save="1" column_invisible="1"/>
+                                        <field name="notify_on_accepted" column_invisible="1" force_save="1"/>
+                                        <field name="notify_on_create" column_invisible="1" force_save="1"/>
+                                        <field name="notify_on_rejected" column_invisible="1" force_save="1"/>
+                                        <field name="notify_on_restarted" column_invisible="1" force_save="1"/>
+                                        <field name="notify_status_on_action" column_invisible="1" force_save="1"/>
+                                        <field name="has_comment" column_invisible="1" force_save="1"/>
+                                        <field name="approve_sequence" column_invisible="1" force_save="1"/>
+                                        <field name="notify_reminder_delay"/>
+                                        <field name="has_forward" readonly="1" force_save="1"/>
+                                        <field name="approve_request" readonly="1" force_save="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_download_documents" model="ir.actions.act_window">
+            <field name="name">Download Documents</field>
+            <field name="res_model">download.documents</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

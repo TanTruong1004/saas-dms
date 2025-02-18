@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_document_category_admin,s_document.document_category_admin,model_document_category,documents.group_documents_manager,1,1,1,1
+access_document_category_user,s_document.document_category_user,model_document_category,documents.group_documents_user,1,0,0,0
+access_download_documents,s_document.download_documents,model_download_documents,,1,1,1,1
+
+access_document_release_wizard,s_document.document_release_wizard,model_document_release_wizard,,1,1,1,1
+access_document_commitment_wizard,s_document.document_commitment_wizard,model_document_commitment_wizard,,1,1,1,1
+
+access_tier_definition,s_document.tier_definition,model_tier_definition,,1,1,1,1
+access_ir_model_document,ir_model_document,base.model_ir_model,documents.group_documents_user,1,0,0,0
+s_document_access_res_config_settings,s_document_access.res.config.settings,base.model_res_config_settings,documents.group_documents_manager,1,1,1,0

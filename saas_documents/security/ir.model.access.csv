@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dropbox_credentials_user,dropbox_credentials_user,model_dropbox_credentials,documents.group_documents_user,1,0,0,0
+access_dropbox_credentials,dropbox_credentials,model_dropbox_credentials,documents.group_documents_manager,1,1,1,1
+access_onlyoffice_permission_user,onlyoffice_permission_user,model_onlyoffice_permission,documents.group_documents_user,1,0,0,0
+access_onlyoffice_permission,onlyoffice_permission,model_onlyoffice_permission,documents.group_documents_manager,1,1,1,1
+access_documents_share_access_user,documents_share_access_user,model_documents_share_access,documents.group_documents_user,1,1,1,1
+access_documents_share_access,documents_share_access,model_documents_share_access,documents.group_documents_manager,1,1,1,1
+
+access_documents_create,access_documents_create,model_documents_create,,1,1,1,1

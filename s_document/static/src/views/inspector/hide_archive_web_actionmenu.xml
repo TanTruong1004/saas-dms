@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="s_doc_web_ActionMenus_inherit" t-inherit="web.CogMenu"
+       t-inherit-mode="extension">
+                        <xpath expr="(//DropdownItem)[last()]//t[@t-esc]" position="attributes">
+                            <attribute name="t-if">this.props.resModel === 'documents.document' and (this.env.services.user.isAdmin or item.key !== 'archive')</attribute>
+                        </xpath>
+                        <xpath expr="(//DropdownItem)[last()]//i[@t-if]" position="attributes">
+                            <attribute name="t-if">(item.icon and this.props.resModel === 'documents.document') and (this.env.services.user.isAdmin or item.key !== 'archive')</attribute>
+                        </xpath>
+
+                        <xpath expr="(//DropdownItem)[last()]" position="inside">
+                            <i t-if="item.icon and this.props.resModel !== 'documents.document'" t-att-class="item.icon + ' me-1 fa-fw oi-fw'"/>
+                             <t t-if="this.props.resModel !== 'documents.document'" t-esc="item.description"/>
+                        </xpath>
+    </t>
+</templates>

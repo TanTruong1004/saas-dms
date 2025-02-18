@@ -1,0 +1,7 @@
+<odoo>
+    <data noupdate="1">
+        <record id="folder_my_diver" model="documents.folder">
+            <field name="name">My Drive</field>
+        </record>
+    </data>
+</odoo>
